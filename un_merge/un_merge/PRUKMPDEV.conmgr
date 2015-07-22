@@ -1,0 +1,10 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="PRUKMPDEV"
+  DTS:DTSID="{57E05F89-589D-48A8-84DA-058C970A712B}"
+  DTS:CreationName="ADO.NET:iAnywhere.Data.SQLAnywhere.SAConnection, iAnywhere.Data.SQLAnywhere.v4.5, Version=12.0.1.41654, Culture=neutral, PublicKeyToken=f222fc4333e0d400">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="DatabaseName=PRUKMPDEV;ServerName=EUC-VD-PRSYB-20_ASA12;ConnectionName=PRUKMPDEV;Host=EUC-VD-PRSYB-20;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

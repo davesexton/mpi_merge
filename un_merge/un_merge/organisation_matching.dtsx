@@ -1,0 +1,282 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="7/22/2015 4:11:47 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="NCOH274"
+  DTS:CreatorName="MPADGLOBAL\davesexton"
+  DTS:DTSID="{ACDED4FC-6FB4-41C1-B2D6-48359D606985}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="12.0.2430.0"
+  DTS:LocaleID="2057"
+  DTS:ObjectName="organisation_matching"
+  DTS:PackageType="5"
+  DTS:VersionBuild="3"
+  DTS:VersionGUID="{F44C5D27-D2F1-4076-99AD-DF7BE9A1B0E0}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{A37B4379-D0A9-4BAD-A895-CBC53040DADA}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task\Get denomallising words"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server."
+              name="Get denomallising words"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement used by the component to extract data."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT x AS word, SUM(occ_count) AS [freq]
+FROM (
+SELECT 
+  CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 1, 1) + '%' THEN '' ELSE SUBSTRING(x, 1, 1) END
+    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 2, 1) + '%' THEN '' ELSE SUBSTRING(x, 2, 1) END
+    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 3, 1) + '%' THEN '' ELSE SUBSTRING(x, 3, 1) END
+    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 4, 1) + '%' THEN '' ELSE SUBSTRING(x, 4, 1) END
+    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 5, 1) + '%' THEN '' ELSE SUBSTRING(x, 5, 1) END
+    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 6, 1) + '%' THEN '' ELSE SUBSTRING(x, 6, 1) END
+    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 7, 1) + '%' THEN '' ELSE SUBSTRING(x, 7, 1) END
+    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 8, 1) + '%' THEN '' ELSE SUBSTRING(x, 8, 1) END
+    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 9, 1) + '%' THEN '' ELSE SUBSTRING(x, 9, 1) END
+    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 10, 1) + '%' THEN '' ELSE SUBSTRING(x, 10, 1) END
+    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 11, 1) + '%' THEN '' ELSE SUBSTRING(x, 11, 1) END
+    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 12, 1) + '%' THEN '' ELSE SUBSTRING(x, 12, 1) END
+    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 13, 1) + '%' THEN '' ELSE SUBSTRING(x, 13, 1) END
+    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 14, 1) + '%' THEN '' ELSE SUBSTRING(x, 14, 1) END
+    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 15, 1) + '%' THEN '' ELSE SUBSTRING(x, 15, 1) END
+    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 16, 1) + '%' THEN '' ELSE SUBSTRING(x, 16, 1) END
+    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 17, 1) + '%' THEN '' ELSE SUBSTRING(x, 17, 1) END
+    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 18, 1) + '%' THEN '' ELSE SUBSTRING(x, 18, 1) END
+    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 19, 1) + '%' THEN '' ELSE SUBSTRING(x, 19, 1) END
+    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 20, 1) + '%' THEN '' ELSE SUBSTRING(x, 20, 1) END
+    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 21, 1) + '%' THEN '' ELSE SUBSTRING(x, 21, 1) END
+    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 22, 1) + '%' THEN '' ELSE SUBSTRING(x, 22, 1) END
+    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 23, 1) + '%' THEN '' ELSE SUBSTRING(x, 23, 1) END
+    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 24, 1) + '%' THEN '' ELSE SUBSTRING(x, 24, 1) END
+    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 25, 1) + '%' THEN '' ELSE SUBSTRING(x, 25, 1) END
+    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 26, 1) + '%' THEN '' ELSE SUBSTRING(x, 26, 1) END
+    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 27, 1) + '%' THEN '' ELSE SUBSTRING(x, 27, 1) END
+    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 28, 1) + '%' THEN '' ELSE SUBSTRING(x, 28, 1) END
+    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 29, 1) + '%' THEN '' ELSE SUBSTRING(x, 29, 1) END
+    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 30, 1) + '%' THEN '' ELSE SUBSTRING(x, 30, 1) END
+    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 31, 1) + '%' THEN '' ELSE SUBSTRING(x, 31, 1) END
+    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 32, 1) + '%' THEN '' ELSE SUBSTRING(x, 32, 1) END
+    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 33, 1) + '%' THEN '' ELSE SUBSTRING(x, 33, 1) END
+    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 34, 1) + '%' THEN '' ELSE SUBSTRING(x, 34, 1) END
+    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 35, 1) + '%' THEN '' ELSE SUBSTRING(x, 35, 1) END
+    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 36, 1) + '%' THEN '' ELSE SUBSTRING(x, 36, 1) END
+    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 37, 1) + '%' THEN '' ELSE SUBSTRING(x, 37, 1) END
+    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 38, 1) + '%' THEN '' ELSE SUBSTRING(x, 38, 1) END
+    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 39, 1) + '%' THEN '' ELSE SUBSTRING(x, 39, 1) END
+    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 40, 1) + '%' THEN '' ELSE SUBSTRING(x, 40, 1) END
+    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 41, 1) + '%' THEN '' ELSE SUBSTRING(x, 41, 1) END
+    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 42, 1) + '%' THEN '' ELSE SUBSTRING(x, 42, 1) END
+    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 43, 1) + '%' THEN '' ELSE SUBSTRING(x, 43, 1) END
+    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 44, 1) + '%' THEN '' ELSE SUBSTRING(x, 44, 1) END
+    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 45, 1) + '%' THEN '' ELSE SUBSTRING(x, 45, 1) END
+    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 46, 1) + '%' THEN '' ELSE SUBSTRING(x, 46, 1) END
+    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 47, 1) + '%' THEN '' ELSE SUBSTRING(x, 47, 1) END
+    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 48, 1) + '%' THEN '' ELSE SUBSTRING(x, 48, 1) END
+    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 49, 1) + '%' THEN '' ELSE SUBSTRING(x, 49, 1) END
+    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 50, 1) + '%' THEN '' ELSE SUBSTRING(x, 50, 1) END
+    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 51, 1) + '%' THEN '' ELSE SUBSTRING(x, 51, 1) END
+    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 52, 1) + '%' THEN '' ELSE SUBSTRING(x, 52, 1) END
+    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 53, 1) + '%' THEN '' ELSE SUBSTRING(x, 53, 1) END
+    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 54, 1) + '%' THEN '' ELSE SUBSTRING(x, 54, 1) END
+    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 55, 1) + '%' THEN '' ELSE SUBSTRING(x, 55, 1) END
+    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 56, 1) + '%' THEN '' ELSE SUBSTRING(x, 56, 1) END
+    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 57, 1) + '%' THEN '' ELSE SUBSTRING(x, 57, 1) END
+    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 58, 1) + '%' THEN '' ELSE SUBSTRING(x, 58, 1) END
+    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 59, 1) + '%' THEN '' ELSE SUBSTRING(x, 59, 1) END
+    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 60, 1) + '%' THEN '' ELSE SUBSTRING(x, 60, 1) END
+    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 61, 1) + '%' THEN '' ELSE SUBSTRING(x, 61, 1) END
+    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 62, 1) + '%' THEN '' ELSE SUBSTRING(x, 62, 1) END
+    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 63, 1) + '%' THEN '' ELSE SUBSTRING(x, 63, 1) END
+    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 64, 1) + '%' THEN '' ELSE SUBSTRING(x, 64, 1) END AS x
+  ,occ_count
+FROM (
+SELECT 
+  *
+  ,'ABCDEFGHIJKLMNOPQRSTUVWXYZ' AS a 
+FROM OPENQUERY([P7MPUK-SYB], '
+SELECT 
+ -- UPPER(displayname) AS displayname
+  --,
+  RIGHT(UPPER(TRIM(displayname)), CHARINDEX('' '', REVERSE(TRIM(displayname))) - 1) AS x
+  ,COUNT(*) AS occ_count
+FROM organisation
+WHERE displayname LIKE ''% %''
+  AND displayname IS NOT NULL
+GROUP BY RIGHT(UPPER(TRIM(displayname)), CHARINDEX('' '', REVERSE(TRIM(displayname))) - 1)
+ORDER BY 2 DESC
+')) a) a
+WHERE x != ''
+GROUP BY x
+HAVING SUM(occ_count) &gt;= 50</property>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether to allow non-string external columns to be implicitly converted to strings at the output columns."
+                  name="AllowImplicitStringConversion">true</property>
+                <property
+                  dataType="System.String"
+                  description="The Source database table name."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specify the mode to retrieve external column information"
+                  name="AccessMode"
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">2</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Get denomallising words.Connections[IDbConnection]"
+                  connectionManagerID="{CA099C18-4884-47C3-BA4F-335965B85796}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[source]"
+                  description="Managed connection manager"
+                  name="IDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Get denomallising words.Outputs[ADO NET Source Output]"
+                  name="ADO NET Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Get denomallising words.Outputs[ADO NET Source Output].Columns[word]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Get denomallising words.Outputs[ADO NET Source Output].ExternalColumns[word]"
+                      length="64"
+                      lineageId="Package\Data Flow Task\Get denomallising words.Outputs[ADO NET Source Output].Columns[word]"
+                      name="word"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Get denomallising words.Outputs[ADO NET Source Output].Columns[freq]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Get denomallising words.Outputs[ADO NET Source Output].ExternalColumns[freq]"
+                      lineageId="Package\Data Flow Task\Get denomallising words.Outputs[ADO NET Source Output].Columns[freq]"
+                      name="freq"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Get denomallising words.Outputs[ADO NET Source Output].ExternalColumns[word]"
+                      dataType="wstr"
+                      length="64"
+                      name="word" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Get denomallising words.Outputs[ADO NET Source Output].ExternalColumns[freq]"
+                      dataType="i4"
+                      name="freq" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Get denomallising words.Outputs[ADO NET Source Error Output]"
+                  isErrorOut="true"
+                  name="ADO NET Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Get denomallising words.Outputs[ADO NET Source Error Output].Columns[word]"
+                      dataType="wstr"
+                      length="64"
+                      lineageId="Package\Data Flow Task\Get denomallising words.Outputs[ADO NET Source Error Output].Columns[word]"
+                      name="word" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Get denomallising words.Outputs[ADO NET Source Error Output].Columns[freq]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Get denomallising words.Outputs[ADO NET Source Error Output].Columns[freq]"
+                      name="freq" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Get denomallising words.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Get denomallising words.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Get denomallising words.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Get denomallising words.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql12">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="152,41.6"
+          Id="Package\Data Flow Task"
+          TopLeft="173.142860091462,59.3411773028258" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="195.2,41.6"
+          Id="Package\Data Flow Task\Get denomallising words"
+          TopLeft="196.00000333786,62.4000008751364" />
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Get denomallising words">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

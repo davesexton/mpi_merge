@@ -1,0 +1,14 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="PRUKPPDEV"
+  DTS:DTSID="{e63453ef-1412-45f6-a1ba-255f44a87596}"
+  DTS:CreationName="ADO.NET:iAnywhere.Data.SQLAnywhere.SAConnection, iAnywhere.Data.SQLAnywhere.v4.5, Version=12.0.1.41654, Culture=neutral, PublicKeyToken=f222fc4333e0d400">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="UserID=davesexton;DatabaseName=PRUKPPDEV;ServerName=EUC-VD-PRSYB-21_ASA12;ConnectionName=PRUKPPDEV;Host=EUC-VD-PRSYB-21;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbGDfuY3YAESiVhZO6CB4yQAAAAACAAAAAAADZgAAwAAAABAAAAA6rtw1wI0GJhffZXj8/AzvAAAAAASAAACgAAAAEAAAAJmzVXUY/JLmNYZr7S7VriR4AAAA8/i3EQkrSbO36D3Q4TdpT6SUXz2ZXUZ9UwPBDKwvtXlgBeg0L89D82sLz/HS1vRGwSRXLe1h1ZwwMNTOvNvJNyuwTbvrP/AnXDMMwORAK5n0orSl/XD/5U0A7GyrK4ap8qA7cZyB5YuP+/dMokQi+dCXF1BS9DvdFAAAAE9HYlCVWl/Ce4Q34iBiRi8IyGLw</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
