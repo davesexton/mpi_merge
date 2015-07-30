@@ -2,7 +2,7 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>un_merge</Name>
-    <LastWriteTime>2015-07-21T13:35:32.1571846Z</LastWriteTime>
+    <LastWriteTime>2015-07-22T15:12:15.7370605Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
@@ -13,12 +13,17 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>deduplicate.dtsx</Name>
-      <LastWriteTime>2015-07-09T08:10:22.0498862Z</LastWriteTime>
+      <LastWriteTime>2015-07-23T10:40:32.6419905Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
-      <Name>Package1.dtsx</Name>
-      <LastWriteTime>2015-07-21T14:30:42.712207Z</LastWriteTime>
+      <Name>person_matching.dtsx</Name>
+      <LastWriteTime>2015-07-24T09:27:50.0055062Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>organisation_matching.dtsx</Name>
+      <LastWriteTime>2015-07-23T14:51:56.6697466Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

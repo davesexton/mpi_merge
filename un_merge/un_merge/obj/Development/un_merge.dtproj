@@ -26,13 +26,14 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">NCOH274</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAYO1kUJ219EOkJGSy2y+ZIwAAAAACAAAAAAADZgAAwAAAABAAAAA4soRCCeM9tqKuYbW34L4bAAAAAASAAACgAAAAEAAAAO4xlmgTAlqb14fRzTvN+M2IAAAAnrdNEfa74nmpVQCr3gFTROeRudKGOtu3lkbF6HhYGAsMMpS+bXF76vqa5nhM1fGE3KxlToLS3wr3AfimN+cL3As7DhrSgokhdEdFyjoqyH/DeM9PYU4BQufKwPrSMbbbo4SMnOJ9qLzeLUvHGOi6qeDINVMmVpTodpVhbIt8DtTVdTSrXNw3hRQAAADoaKocOCX5OvfGcU/SNPXMTKKlGA==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAYO1kUJ219EOkJGSy2y+ZIwAAAAACAAAAAAADZgAAwAAAABAAAACiv/4SgvWFioGfWTJMYhOBAAAAAASAAACgAAAAEAAAABBw0Wi2/VRLZ+JWWESJnYWIAAAAuOGFeZAln6pWcJmi5dP4uTcmkjC0LtHlyIHD7gQW/upK+Dv+ZOGwh3z3Ylmh8LBaOb9PKDQC+BSp6ZZQ6ULdT3/W6GPWr/oo72PzhY4Iw9U7rK3gLPFqmQvfVx4F2SFFry9jSmO8xOfvhLAnCk44EFXo2XPQ21622cDTWW2fqCKRFf2QYEaTcRQAAACUCGfvbZXkBJjJDW18vANuEUqfkA==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
           <SSIS:Package SSIS:Name="Package.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="deduplicate.dtsx" SSIS:EntryPoint="1" />
-          <SSIS:Package SSIS:Name="Package1.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="person_matching.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="organisation_matching.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="source.conmgr" />
@@ -3625,10 +3626,10 @@
                 <SSIS:Property SSIS:Name="Name">deduplicate</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">46</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">47</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{AE89075E-172E-40D6-AF7B-94DFC959A853}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{E66AAD08-4F10-4D73-8CE9-B78CC6A2825F}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -4177,16 +4178,16 @@
                 </SSIS:Parameter>
               </SSIS:Parameters>
             </SSIS:PackageMetaData>
-            <SSIS:PackageMetaData SSIS:Name="Package1.dtsx">
+            <SSIS:PackageMetaData SSIS:Name="person_matching.dtsx">
               <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{93FF5FA4-5FED-4D90-9F62-AA8996226F1E}</SSIS:Property>
-                <SSIS:Property SSIS:Name="Name">Package1</SSIS:Property>
+                <SSIS:Property SSIS:Name="ID">{6653DB3C-BA83-4A1A-82FD-43D929F24AF1}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">person_matching</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">111</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">118</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{5C468ABF-AF37-4045-9984-1798996DECD2}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{76AAB8AA-9F0F-47BE-B3B1-3D8E35495DD0}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -4390,6 +4391,23 @@
                   </SSIS:Properties>
                 </SSIS:Parameter>
               </SSIS:Parameters>
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="organisation_matching.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{ACDED4FC-6FB4-41C1-B2D6-48359D606985}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">organisation_matching</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">9</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{4DCEF6A0-6BDB-449B-B914-92B4D1EC7076}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
             </SSIS:PackageMetaData>
           </SSIS:PackageInfo>
         </SSIS:DeploymentInfo>
