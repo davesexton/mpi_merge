@@ -11,20 +11,99 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="organisation_matching"
   DTS:PackageType="5"
-  DTS:VersionBuild="9"
-  DTS:VersionGUID="{4DCEF6A0-6BDB-449B-B914-92B4D1EC7076}">
+  DTS:VersionBuild="85"
+  DTS:VersionGUID="{7C5F8F65-2793-4E29-B102-384F64A080A9}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
-  <DTS:Variables />
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[source]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{CA099C18-4884-47C3-BA4F-335965B85796}"
+      DTS:ObjectName="source">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Retain="True"
+          DTS:ConnectionString="Data Source=UKA-VL-MSQLS-40\PAGEREPORTING;Initial Catalog=CRMstaging;Integrated Security=True;MultipleActiveResultSets=True;Application Name=SSIS-loader-{CA099C18-4884-47C3-BA4F-335965B85796}UK-B-SQL-114.P7MPUK;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[target]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{DF2B02C5-883B-4BAA-B3D9-17A96036ABE2}"
+      DTS:ObjectName="target">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Retain="True"
+          DTS:ConnectionString="Data Source=UKA-VL-MSQLS-40\PAGEREPORTING;Initial Catalog=tempdb;Integrated Security=True;Application Name=SSIS-Package-{DF2B02C5-883B-4BAA-B3D9-17A96036ABE2}localhost.un_merge;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C96BD9D4-35F1-4DAA-8940-62788CE0640C}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="domain_regex">
+      <DTS:VariableValue
+        DTS:DataType="8">^(?:AC|AD|AE|AF|AG|AI|AL|AM|AN|AO|AQ|AR|AS|AT|AU|AW|AX|AZ|BA|BB|BD|BE|BF|BG|BH|BI|BJ|BM|BN|BO|BQ|BR|BS|BT|BV|BW|BY|BZ|CA|CC|CD|CF|CG|CH|CI|CK|CL|CM|CN|CO|COM|CR|CU|CV|CW|CX|CY|CZ|DE|DJ|DK|DM|DO|DZ|EC|EDU|EE|EG|EH|ER|ES|ET|EU|EUS|FI|FJ|FK|FM|FO|FR|GA|GAL|GB|GD|GE|GF|GG|GH|GI|GL|GM|GN|GOV|GP|GQ|GR|GS|GT|GU|GW|GY|HK|HM|HN|HR|HT|HU|ID|IE|IL|IM|IN|INT|IO|IQ|IR|IS|IT|JE|JM|JO|JP|KE|KG|KH|KI|KM|KN|KP|KR|KW|KY|KZ|LA|LB|LC|LI|LK|LR|LS|LT|LU|LV|LY|MA|MC|MD|ME|MG|MH|MIL|MK|ML|MM|MN|MO|MP|MQ|MR|MS|MT|MU|MV|MW|MX|MY|MZ|NA|NC|NE|NET|NF|NG|NI|NL|NO|NP|NR|NU|NZ|OM|ORG|PA|PE|PF|PG|PH|PK|PL|PM|PN|PR|PS|PT|PW|PY|QA|RE|RO|RS|RU|RW|SA|SB|SC|SD|SE|SG|SH|SI|SJ|SK|SL|SM|SN|SO|SR|SS|ST|SU|SV|SX|SY|SZ|TC|TD|TF|TG|TH|TJ|TK|TL|TM|TN|TO|TP|TR|TT|TV|TW|TZ|UA|UG|UK|US|UY|UZ|VA|VC|VE|VG|VI|VN|VU|WF|WS|YE|YT|ZA|ZM|ZW)$</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{B661A036-EACD-434A-8268-8B7073B9183C}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="email_regex">
+      <DTS:VariableValue
+        DTS:DataType="8">\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{05DC0121-89BF-4085-8F6F-B1D731934791}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="rs">
+      <DTS:VariableValue
+        DTS:DataSubType="ManagedSerializable"
+        DTS:DataType="13">
+        <SOAP-ENV:Envelope xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+          <SOAP-ENV:Body>
+            <xsd:anyType
+              id="ref-1"></xsd:anyType>
+          </SOAP-ENV:Body>
+        </SOAP-ENV:Envelope>
+      </DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Data Flow Task"
+      DTS:refId="Package\Create table"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{c11ac07f-1b21-4efe-82aa-fc74b4b21f1f}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Create table"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{CA099C18-4884-47C3-BA4F-335965B85796}"
+          SQLTask:SqlStatementSource="IF OBJECT_ID('tempdb..##uk_match_organisation') IS NULL&#xA;&#xA;CREATE TABLE ##uk_match_organisation (&#xA;  ref INT&#xA;  ,name VARCHAR(255)&#xA;  ,norm_name VARCHAR(255)&#xA;  ,last_word VARCHAR(255)&#xA;  ,hierarchy VARCHAR(4000)&#xA;  ,domain VARCHAR(255)&#xA;  ,email_count INT&#xA; )&#xA;&#xA;TRUNCATE TABLE ##uk_match_organisation" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Get organisations"
       DTS:CreationName="Microsoft.Pipeline"
+      DTS:DelayValidation="True"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{A37B4379-D0A9-4BAD-A895-CBC53040DADA}"
+      DTS:DTSID="{11D70C06-5B03-4C40-8D03-6953A84EF7AA}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Data Flow Task"
+      DTS:ObjectName="Get organisations"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -32,11 +111,1318 @@
           version="1">
           <components>
             <component
-              refId="Package\Data Flow Task\Get denomallising words"
+              refId="Package\Get organisations\Add last_word column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Add last_word column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Get organisations\Add last_word column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Get organisations\Add last_word column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Get organisations\Add last_word column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Get organisations\Add last_word column.Outputs[Derived Column Output].Columns[last_word]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Get organisations\Add last_word column.Outputs[Derived Column Output].Columns[last_word]"
+                      name="last_word"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">NULL(DT_WSTR,255)</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">NULL(DT_WSTR,255)</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Get organisations\Add last_word column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Get organisations\Add last_word column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Get organisations\Add last_word column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Get organisations\Add last_word column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Get organisations\Add last_word column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Get organisations\Add last_word column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Get organisations\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Get organisations\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Get organisations\Data Conversion.Inputs[Data Conversion Input].Columns[count]"
+                      cachedDataType="ui8"
+                      cachedName="count"
+                      lineageId="Package\Get organisations\Remove duplicates.Outputs[Aggregate Output 1].Columns[count]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Get organisations\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Get organisations\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Get organisations\Data Conversion.Outputs[Data Conversion Output].Columns[email_count]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Get organisations\Data Conversion.Outputs[Data Conversion Output].Columns[email_count]"
+                      name="email_count"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Get organisations\Remove duplicates.Outputs[Aggregate Output 1].Columns[count]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Get organisations\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Get organisations\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Get organisations\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Get organisations\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Get organisations\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Get organisations\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Get organisations\De-noise"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Includes and runs custom script code. For example, apply a business rule that limits the range of valid values in an &quot;income&quot; column or add values in two columns and calculate the average of the sum.;Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;9"
+              description="Includes and runs custom script code. For example, apply a business rule that limits the range of valid values in an &quot;income&quot; column or add values in two columns and calculate the average of the sum."
+              name="De-noise"
+              version="9">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Stores the source code of the component"
+                  isArray="true"
+                  name="SourceCode"
+                  state="cdata">
+                  <arrayElements
+                    arrayElementCount="30">
+                    <arrayElement
+                      dataType="System.String"><![CDATA[ComponentWrapper.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[/* THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
+*  Microsoft SQL Server Integration Services component wrapper
+*  This module defines the base class for your component
+*  THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT! */
+
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Pipeline;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+using Microsoft.SqlServer.Dts.Runtime.Wrapper;
+
+public class UserComponent: ScriptComponent
+{
+    public Connections Connections;
+    public Variables Variables;
+    public UserComponent()
+    {
+        Connections = new Connections(this);
+        Variables = new Variables(this);
+    }
+
+    public override void ProcessInput(int InputID, string InputName, PipelineBuffer Buffer, OutputNameMap OutputMap)
+    {
+
+        if (InputName.Equals(@"Input 0", StringComparison.Ordinal))
+        {
+            Input0_ProcessInput(new Input0Buffer(Buffer, GetColumnIndexes(InputID), OutputMap));
+        }
+
+    }
+
+    public virtual void Input0_ProcessInput(Input0Buffer Buffer)
+    {
+        while (Buffer.NextRow())
+        {
+            Input0_ProcessInputRow(Buffer);
+        }
+    }
+
+    public virtual void Input0_ProcessInputRow(Input0Buffer Row)
+    {
+    }
+
+}
+
+public class Connections
+{
+    ScriptComponent ParentComponent;
+
+    public Connections(ScriptComponent Component)
+    {
+        ParentComponent = Component;
+    }
+
+}
+
+public class Variables
+{
+    ScriptComponent ParentComponent;
+
+    public Variables(ScriptComponent Component)
+    {
+        ParentComponent = Component;
+    }
+
+    public String domainregex
+    {
+        get
+        {
+            return (String)(ParentComponent.ReadOnlyVariables["domain_regex"].GetValueWithContext(ScriptComponent.EvaluatorContext));
+        }
+    }
+
+    public String emailregex
+    {
+        get
+        {
+            return (String)(ParentComponent.ReadOnlyVariables["email_regex"].GetValueWithContext(ScriptComponent.EvaluatorContext));
+        }
+    }
+
+}
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Properties\Resources.resx]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+</root>]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[main.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[#region Help:  Introduction to the Script Component
+/* The Script Component allows you to perform virtually any operation that can be accomplished in
+ * a .Net application within the context of an Integration Services data flow.
+ *
+ * Expand the other regions which have "Help" prefixes for examples of specific ways to use
+ * Integration Services features within this script component. */
+#endregion
+
+#region Namespaces
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+using Microsoft.SqlServer.Dts.Runtime.Wrapper;
+using System.Text.RegularExpressions;
+#endregion
+
+/// <summary>
+/// This is the class to which to add your code.  Do not change the name, attributes, or parent
+/// of this class.
+/// </summary>
+[Microsoft.SqlServer.Dts.Pipeline.SSISScriptComponentEntryPointAttribute]
+public class ScriptMain : UserComponent
+{
+    #region Help:  Using Integration Services variables and parameters
+    /* To use a variable in this script, first ensure that the variable has been added to
+     * either the list contained in the ReadOnlyVariables property or the list contained in
+     * the ReadWriteVariables property of this script component, according to whether or not your
+     * code needs to write into the variable.  To do so, save this script, close this instance of
+     * Visual Studio, and update the ReadOnlyVariables and ReadWriteVariables properties in the
+     * Script Transformation Editor window.
+     * To use a parameter in this script, follow the same steps. Parameters are always read-only.
+     *
+     * Example of reading from a variable or parameter:
+     *  DateTime startTime = Variables.MyStartTime;
+     *
+     * Example of writing to a variable:
+     *  Variables.myStringVariable = "new value";
+     */
+    #endregion
+
+    #region Help:  Using Integration Services Connnection Managers
+    /* Some types of connection managers can be used in this script component.  See the help topic
+     * "Working with Connection Managers Programatically" for details.
+     *
+     * To use a connection manager in this script, first ensure that the connection manager has
+     * been added to either the list of connection managers on the Connection Managers page of the
+     * script component editor.  To add the connection manager, save this script, close this instance of
+     * Visual Studio, and add the Connection Manager to the list.
+     *
+     * If the component needs to hold a connection open while processing rows, override the
+     * AcquireConnections and ReleaseConnections methods.
+     * 
+     * Example of using an ADO.Net connection manager to acquire a SqlConnection:
+     *  object rawConnection = Connections.SalesDB.AcquireConnection(transaction);
+     *  SqlConnection salesDBConn = (SqlConnection)rawConnection;
+     *
+     * Example of using a File connection manager to acquire a file path:
+     *  object rawConnection = Connections.Prices_zip.AcquireConnection(transaction);
+     *  string filePath = (string)rawConnection;
+     *
+     * Example of releasing a connection manager:
+     *  Connections.SalesDB.ReleaseConnection(rawConnection);
+     */
+    #endregion
+
+    #region Help:  Firing Integration Services Events
+    /* This script component can fire events.
+     *
+     * Example of firing an error event:
+     *  ComponentMetaData.FireError(10, "Process Values", "Bad value", "", 0, out cancel);
+     *
+     * Example of firing an information event:
+     *  ComponentMetaData.FireInformation(10, "Process Values", "Processing has started", "", 0, fireAgain);
+     *
+     * Example of firing a warning event:
+     *  ComponentMetaData.FireWarning(10, "Process Values", "No rows were received", "", 0);
+     */
+    #endregion
+
+    /// <summary>
+    /// This method is called once, before rows begin to be processed in the data flow.
+    ///
+    /// You can remove this method if you don't need to do anything here.
+    /// </summary>
+    public override void PreExecute()
+    {
+        base.PreExecute();
+        /*
+         * Add your code here
+         */
+    }
+
+    /// <summary>
+    /// This method is called after all the rows have passed through this component.
+    ///
+    /// You can delete this method if you don't need to do anything here.
+    /// </summary>
+    public override void PostExecute()
+    {
+        base.PostExecute();
+        /*
+         * Add your code here
+         */
+    }
+
+    /// <summary>
+    /// This method is called once for every row that passes through the component from Input0.
+    ///
+    /// Example of reading a value from a column in the the row:
+    ///  string zipCode = Row.ZipCode
+    ///
+    /// Example of writing a value to a column in the row:
+    ///  Row.ZipCode = zipCode
+    /// </summary>
+    /// <param name="Row">The row that is currently passing through the component</param>
+    public override void Input0_ProcessInputRow(Input0Buffer Row)
+    {
+        /*
+         * Add your code here
+         */
+        if(!Row.normname_IsNull)
+        {
+            string name = Regex.Replace(Row.normname, @"\([^)]+\)", " ");
+            name = Regex.Replace(name, @"[^A-Z0-9]+$|^[^A-Z0-9]+", "");
+            string[] name_array = Regex.Split(name, @"[^A-Z0-9]+");
+            if (name_array.Length > 1)
+            {
+                Row.lastword = name_array[name_array.Length - 1];
+            }
+            Row.normname = String.Join(" ", name_array);
+        }
+        Match match = Regex.Match(Row.domain, Variables.emailregex);
+        String domain = "";
+        if (match.Success)
+        {
+            String[] parts = match.Value.Split('@')[1].Split('.');
+            for (Int16 i = 0; i < parts.Length; i++ )
+            {
+                if (Regex.Match(parts[i], Variables.domainregex).Success)
+                {
+                    parts[i] = "";
+                }
+            }
+            domain = String.Join("", parts);
+            if (domain == "") domain = match.Value.Split('@')[1].Split('.')[0];
+        }
+        if (domain == "")
+        {
+            Row.domain_IsNull = true;  
+        }
+        else
+        {
+            Row.domain = domain;
+        }
+    }
+
+}
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[BufferWrapper.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[/* THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
+*  Microsoft SQL Server Integration Services buffer wrappers
+*  This module defines classes for accessing data flow buffers
+*  THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT! */
+
+
+
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Pipeline;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+
+public class Input0Buffer: ScriptBuffer
+
+{
+    public Input0Buffer(PipelineBuffer Buffer, int[] BufferColumnIndexes, OutputNameMap OutputMap)
+        : base(Buffer, BufferColumnIndexes, OutputMap)
+    {
+    }
+
+    public String lastword
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[0]);
+        }
+        set
+        {
+            this[0] = value;
+        }
+    }
+    public bool lastword_IsNull
+    {
+        get
+        {
+            return IsNull(0);
+        }
+        set
+        {
+            if (value)
+            {
+                SetNull(0);
+            }
+            else
+            {
+                throw new InvalidOperationException("IsNull property cannot be set to False. Assign a value to the column instead.");
+            }
+        }
+    }
+
+    public String normname
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[1]);
+        }
+        set
+        {
+            this[1] = value;
+        }
+    }
+    public bool normname_IsNull
+    {
+        get
+        {
+            return IsNull(1);
+        }
+        set
+        {
+            if (value)
+            {
+                SetNull(1);
+            }
+            else
+            {
+                throw new InvalidOperationException("IsNull property cannot be set to False. Assign a value to the column instead.");
+            }
+        }
+    }
+
+    public String domain
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[2]);
+        }
+        set
+        {
+            this[2] = value;
+        }
+    }
+    public bool domain_IsNull
+    {
+        get
+        {
+            return IsNull(2);
+        }
+        set
+        {
+            if (value)
+            {
+                SetNull(2);
+            }
+            else
+            {
+                throw new InvalidOperationException("IsNull property cannot be set to False. Assign a value to the column instead.");
+            }
+        }
+    }
+
+    new public bool NextRow()
+    {
+        return base.NextRow();
+    }
+
+    new public bool EndOfRowset()
+    {
+        return base.EndOfRowset();
+    }
+
+}
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Properties\Settings.Designer.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_77e5956ae61f430a843d28b19dc78f1c.Properties.Settings.get_Default():SC_77e5956ae61f430a843d28b19dc78f1c.Properties.Sett" +
+    "ings")]
+
+namespace SC_77e5956ae61f430a843d28b19dc78f1c.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Properties\Resources.Designer.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_77e5956ae61f430a843d28b19dc78f1c.Properties.Resources.get_ResourceManager():System.Resources.Resou" +
+    "rceManager")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_77e5956ae61f430a843d28b19dc78f1c.Properties.Resources.get_Culture():System.Globalization.CultureIn" +
+    "fo")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_77e5956ae61f430a843d28b19dc78f1c.Properties.Resources.set_Culture(System.Globalization.CultureInfo" +
+    "):Void")]
+
+namespace SC_77e5956ae61f430a843d28b19dc78f1c.Properties {
+    
+    
+    /// <summary>
+    ///   A strongly-typed resource class, for looking up localized strings, etc.
+    /// </summary>
+    // This class was auto-generated by the StronglyTypedResourceBuilder
+    // class via a tool like ResGen or Visual Studio.
+    // To add or remove a member, edit your .ResX file then rerun ResGen
+    // with the /str option, or rebuild your VS project.
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    internal class Resources {
+        
+        private static global::System.Resources.ResourceManager resourceMan;
+        
+        private static global::System.Globalization.CultureInfo resourceCulture;
+        
+        [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
+        internal Resources() {
+        }
+        
+        /// <summary>
+        ///   Returns the cached ResourceManager instance used by this class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Resources.ResourceManager ResourceManager {
+            get {
+                if ((resourceMan == null)) {
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SC_77e5956ae61f430a843d28b19dc78f1c.Properties.Resources", typeof(Resources).Assembly);
+                    resourceMan = temp;
+                }
+                return resourceMan;
+            }
+        }
+        
+        /// <summary>
+        ///   Overrides the current thread's CurrentUICulture property for all
+        ///   resource lookups using this strongly typed resource class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Globalization.CultureInfo Culture {
+            get {
+                return resourceCulture;
+            }
+            set {
+                resourceCulture = value;
+            }
+        }
+    }
+}
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Project]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF16LE]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="3.0" schemaVersion="1.0">
+	<msb:PropertyGroup>
+		<msb:CodeName>SC_77e5956ae61f430a843d28b19dc78f1c</msb:CodeName>
+		<msb:Language>msBuild</msb:Language>
+		<msb:DisplayName>SC_77e5956ae61f430a843d28b19dc78f1c</msb:DisplayName>
+		<msb:ProjectId>{E6A39C1C-DCCC-421E-8241-1662E5C9A4AA}</msb:ProjectId>
+	</msb:PropertyGroup>
+	<msb:ItemGroup>
+		<msb:Project Include="SC_77e5956ae61f430a843d28b19dc78f1c.csproj"/>
+		<msb:File Include="Properties\AssemblyInfo.cs"/>
+		<msb:File Include="Properties\Settings.settings"/>
+		<msb:File Include="Properties\Resources.resx"/>
+		<msb:File Include="Properties\Resources.Designer.cs"/>
+		<msb:File Include="Properties\Settings.Designer.cs"/>
+		<msb:File Include="main.cs"/>
+		<msb:File Include="BufferWrapper.cs"/>
+		<msb:File Include="ComponentWrapper.cs"/>
+	</msb:ItemGroup>
+</c:Project>]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Properties\AssemblyInfo.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("SC_77e5956ae61f430a843d28b19dc78f1c")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("Michael Page International PLC")]
+[assembly: AssemblyProduct("SC_77e5956ae61f430a843d28b19dc78f1c")]
+[assembly: AssemblyCopyright("Copyright @ Michael Page International PLC 2016")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Properties\Settings.settings]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[SC_77e5956ae61f430a843d28b19dc78f1c.csproj]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{ca0fbef6-7c43-46a7-89d8-7a853aa0579d}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SC_77e5956ae61f430a843d28b19dc78f1c</RootNamespace>
+    <AssemblyName>SC_77e5956ae61f430a843d28b19dc78f1c</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>.\bin\Debug\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.SqlServer.TxScript, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.DTSRuntimeWrap, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.DTSPipelineWrap, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.PipelineHost, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Compile Include="main.cs" />
+    <Compile Include="BufferWrapper.cs" />
+    <Compile Include="ComponentWrapper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <!-- Include the build rules for a C# project.-->
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- This section defines VSTA properties that describe the host-changable project properties. -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}">
+        <ProjectProperties HostName="ScriptComponent" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="cs" TemplatesPath="" DebugInfoExeName="" DebugInfoCommandLine="" DebugInfoWorkingDir="" IconImageList="" />
+        <Host Name="ScriptComponent" GeneratedNamespace="SC_77e5956ae61f430a843d28b19dc78f1c" IconIndex="0"></Host>
+        <ProjectClient>
+          <HostIdentifier>SSIS_SC120</HostIdentifier>
+        </ProjectClient>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>]]></arrayElement>
+                  </arrayElements>
+                </property>
+                <property
+                  dataType="System.String"
+                  description="Stores the binary representation of the component"
+                  isArray="true"
+                  name="BinaryCode"
+                  state="cdata">
+                  <arrayElements
+                    arrayElementCount="2">
+                    <arrayElement
+                      dataType="System.String"><![CDATA[SC_77e5956ae61f430a843d28b19dc78f1c.dll]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAPnxKVcAAAAAAAAAAOAAAiELAQsAABoAAAAIAAAAAAAATjkA
+AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAEAAAAAAAAAACAAAAAAgAAAAAAAAMAQIUAABAA
+ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAPw4AABPAAAAAEAAAKgEAAAAAAAAAAAAAAAAAAAA
+AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAAVBkAAAAgAAAAGgAAAAIA
+AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAAKgEAAAAQAAAAAYAAAAcAAAAAAAAAAAAAAAAAABAAABA
+LnJlbG9jAAAMAAAAAGAAAAACAAAAIgAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAAAw
+OQAAAAAAAEgAAAACAAUAmCQAAGQUAAABAAAAAAAAAOAjAAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAH4CKA0AAAoCAnMYAAAGfQEAAAQCAnMZAAAGfQIAAAQqkgRy
+AQAAcBpvDgAACiwVAgUCAygPAAAKDgRzCQAABm8DAAAGKkorBwIDbwQAAAYDbxYAAAYt8SoGKh4C
+KBEAAAoqHgIoEgAACioAABMwBABhAQAAAQAAEQNvEAAABi1XA28OAAAGchEAAHByJQAAcCgTAAAK
+CgZyKQAAcHJZAABwKBMAAAoKBnJbAABwKBQAAAoLB45pFzENAwcHjmkXWZpvCwAABgNyJQAAcAco
+FQAACm8PAAAGA28SAAAGAnsCAAAEbxsAAAYoFgAACgxyWQAAcA0IbxcAAAo5vQAAAAhvGAAACheN
+HAAAARMGEQYWH0CdEQZvGQAACheaF40cAAABEwcRBxYfLp0RB28ZAAAKEwQWEwUrLREEEQWaAnsC
+AAAEbxoAAAYoFgAACm8XAAAKLAoRBBEFclkAAHCiEQUXWGgTBREFEQSOaTLLclkAAHARBCgVAAAK
+DQlyWQAAcCgaAAAKLDUIbxgAAAoXjRwAAAETCBEIFh9AnREIbxkAAAoXmheNHAAAARMJEQkWHy6d
+EQlvGQAAChaaDQlyWQAAcCgaAAAKLAgDF28VAAAGKgMJbxMAAAYqHgIoAQAABioqAgMEBSgbAAAK
+KlICexwAAAoCex0AAAoWlG8eAAAKKiYCFgMoHwAACioiAhYoIAAACipaAywIAhYoIQAACipycQAA
+cHMiAAAKelICexwAAAoCex0AAAoXlG8eAAAKKiYCFwMoHwAACioiAhcoIAAACipaAywIAhcoIQAA
+CipycQAAcHMiAAAKelICexwAAAoCex0AAAoYlG8eAAAKKiYCGAMoHwAACioiAhgoIAAACipaAywI
+AhgoIQAACipycQAAcHMiAAAKeh4CKCMAAAoqHgIoJAAACio6AiglAAAKAgN9AwAABCo6AiglAAAK
+AgN9BAAABCqWAnsEAAAEbyYAAApyDgEAcG8nAAAKKCgAAApvKQAACnQVAAABKpYCewQAAARvJgAA
+CnIoAQBwbycAAAooKAAACm8pAAAKdBUAAAEqHgIoJQAACioAEzACAC0AAAACAAARfgUAAAQtIHJA
+AQBw0AcAAAIoKwAACm8sAAAKcy0AAAoKBoAFAAAEfgUAAAQqGn4GAAAEKh4CgAYAAAQqGn4HAAAE
+Ki5zIQAABoAHAAAEKh4CKDAAAAoqALQAAADOyu++AQAAAJEAAABsU3lzdGVtLlJlc291cmNlcy5S
+ZXNvdXJjZVJlYWRlciwgbXNjb3JsaWIsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFs
+LCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5I1N5c3RlbS5SZXNvdXJjZXMuUnVudGlt
+ZVJlc291cmNlU2V0AgAAAAAAAAAAAAAAUEFEUEFEULQAAABCU0pCAQABAAAAAAAMAAAAdjQuMC4z
+MDMxOQAAAAAFAGwAAAD8BgAAI34AAGgHAAD8CAAAI1N0cmluZ3MAAAAAZBAAALQBAAAjVVMAGBIA
+ABAAAAAjR1VJRAAAACgSAAA8AgAAI0Jsb2IAAAAAAAAAAgAAAVcVogEJAQAAAPolMwAWAAABAAAA
+KAAAAAgAAAAHAAAAIgAAABMAAAAwAAAADwAAAAIAAAAEAAAACwAAABIAAAABAAAABQAAAAEAAAAA
+AAoAAQAAAAAABgDuAM0ABgD+AM0ACgAbARQBDgA3ASIBEgB2Ac0ABgCFAc0ACgBSA0EDCgCDA24D
+CgBcBEIECgCHBHUECgCeBHUECgC7BHUECgDaBHUECgDzBHUECgAMBXUECgAnBXUECgBCBXUECgBb
+BXUECgCUBXQFCgC0BXQFCgD2BRQBCgD9BRQBBgAmBs0ADgBsBk0GDgCFBk0GDgCLBk0GDgCdBk0G
+CgCvBhQBCgDiBhQBFgBHBx8HFgBuBx8HBwCHBwAAFgC3Bx8HCgD2B+MHCgATCBQBCgAYCBQBCgA8
+CHUEDgBoCFIIDgCBCFIICgCWCHQFAAAAAAEAAAAAAAEAAQABABAAMgAAAAUAAQABAAEAEABAAAAA
+CAADAAUAAQAQAEsAAAAJAAMACQABABAAWAAAAA0AAwAYAAEAEABkAAAADQAEABkAAAAQAG4AeAAN
+AAUAHAAAARAApwB4ABEABwAgAAYAWAATAAYAZAAXAAEA+wJTAAEA+wJTABEAYgNdABEAjwNhABEA
+0wN/AFAgAAAAAIYYTwEbAAEAcCAAAAAAxgCTAR8AAQCVIAAAAADGAaABKQAFAKggAAAAAMYBtAEp
+AAYAqiAAAAAAxgDLARsABwCyIAAAAADGANYBGwAHALwgAAAAAMYAtAEpAAcAKSIAAAAAhhhPARsA
+CAAxIgAAAACGGE8BLwAIADwiAAAAAIYI4gE5AAsAUSIAAAAAhgjvAT0ACwBbIgAAAACGCPwBQgAM
+AGQiAAAAAIYIEAJGAAwAeyIAAAAAhggkAjkADQCQIgAAAACGCDECPQANAJoiAAAAAIYIPgJCAA4A
+oyIAAAAAhghSAkYADgC6IgAAAACGCGYCOQAPAM8iAAAAAIYIcQI9AA8A2SIAAAAAhgh8AkIAEADi
+IgAAAACGCI4CRgAQAPkiAAAAAIYAoAJCABEAASMAAAAAhgCoAkIAEQAJIwAAAACGGE8BVwARABgj
+AAAAAIYYTwFXABIAJyMAAAAAhggLAzkAEwBNIwAAAACGCBsDOQATAHMjAAAAAIMYTwEbABMAfCMA
+AAAAkwifA2UAEwC1IwAAAACTCLMDagATALwjAAAAAJMIvwNvABMAxCMAAAAAlgjjA4MAFADXIwAA
+AACGGE8BGwAUAMsjAAAAAJEYsQg9ARQAAAABAPcDAAACAP8DAAADAAkEAAAEABAEAAABAAkEAAAB
+ABoEAAABABoEAAABAAkEAAACAB4EAAADABAEAAABADIEAAABADIEAAABADIEAAABADIEAAABADIE
+AAABADIEAAABADgEAAABADgEAAABADIESQBPAT0AUQBPAT0AWQBPAT0AYQBPAT0AaQBPAT0AcQBP
+AT0AeQBPAT0AgQBPAT0AiQBPAT0AkQBPAT0AmQBPAY0AoQBPARsACQBPARsAqQAOBpIACQAVBpkA
+uQBPARsACQDLARsACQDWARsAwQByBqQAwQB6BqsAqQCABrIAwQCFBrkA0QCRBkIA2QClBjkAqQB6
+BsAAqQC0BscAEQBPAS8AEQAJBOEAEQAeBOUAKQDABukAEQDKBu4AEQDTBvQAEQDaBo0A6QBPAT0A
+EQCgAkIAEQCoAkIAGQBPARsACQBYB/kA8QB+B/4ACQCiBwQB+QDPBwoBEQFPARsAGQEqCBEBGQFF
+CBoBOQBPASABMQFPAS0BQQFPARsAIQBPARsALgAbALIBLgBjABoCLgALAEEBLgATAIkBLgAjALIB
+LgArALgBLgAzAIkBLgA7ANwBLgBDALIBLgBbABECYwCDAJ8A4QB7AZ8A4wBTAZ8AKQFzATQBSQFz
+ATQBzQAoAQQAAQAGAAcABwAJAAgACwAAALQCSwAAAL0CTwAAAM0CSwAAANYCTwAAAOYCSwAAAO0C
+TwAAACoDSwAAADYDSwAAAFIDdQAAAMsDegAAAO8DiAACAAoAAwABAAsAAwABAA0ABQACAAwABQAB
+AA8ABwACAA4ABwACABAACQABABEACQACABIACwABABMACwACABQADQABABUADQACABoADwACABsA
+EQACAB0AEwACAB4AFQABAB8AFQACACAAFwAEgAAAAQAAAFAXPFsAAAAAAADSBQAADAAAAAAAAAAA
+AAAAAQCwAAAAAAAEAAAAAAAAAAAAAAAKAAsBAAAAAAQAAAAAAAAAAAAAAAoAFAEAAAAADAAAAAAA
+AAAAAAAAAQBVAQAAAAAMAAAAAAAAAAAAAAABAPwGAAAAAAAAAAABAAAAuAgAAAAAAAAAPE1vZHVs
+ZT4AU0NfNzdlNTk1NmFlNjFmNDMwYTg0M2QyOGIxOWRjNzhmMWMuZGxsAFVzZXJDb21wb25lbnQA
+U2NyaXB0TWFpbgBJbnB1dDBCdWZmZXIAQ29ubmVjdGlvbnMAVmFyaWFibGVzAFJlc291cmNlcwBT
+Q183N2U1OTU2YWU2MWY0MzBhODQzZDI4YjE5ZGM3OGYxYy5Qcm9wZXJ0aWVzAFNldHRpbmdzAE1p
+Y3Jvc29mdC5TcWxTZXJ2ZXIuVHhTY3JpcHQATWljcm9zb2Z0LlNxbFNlcnZlci5EdHMuUGlwZWxp
+bmUAU2NyaXB0Q29tcG9uZW50AFNjcmlwdEJ1ZmZlcgBtc2NvcmxpYgBTeXN0ZW0AT2JqZWN0AFN5
+c3RlbS5Db25maWd1cmF0aW9uAEFwcGxpY2F0aW9uU2V0dGluZ3NCYXNlAC5jdG9yAE1pY3Jvc29m
+dC5TcWxTZXJ2ZXIuUGlwZWxpbmVIb3N0AFBpcGVsaW5lQnVmZmVyAE91dHB1dE5hbWVNYXAAUHJv
+Y2Vzc0lucHV0AElucHV0MF9Qcm9jZXNzSW5wdXQASW5wdXQwX1Byb2Nlc3NJbnB1dFJvdwBQcmVF
+eGVjdXRlAFBvc3RFeGVjdXRlAGdldF9sYXN0d29yZABzZXRfbGFzdHdvcmQAZ2V0X2xhc3R3b3Jk
+X0lzTnVsbABzZXRfbGFzdHdvcmRfSXNOdWxsAGdldF9ub3JtbmFtZQBzZXRfbm9ybW5hbWUAZ2V0
+X25vcm1uYW1lX0lzTnVsbABzZXRfbm9ybW5hbWVfSXNOdWxsAGdldF9kb21haW4Ac2V0X2RvbWFp
+bgBnZXRfZG9tYWluX0lzTnVsbABzZXRfZG9tYWluX0lzTnVsbABOZXh0Um93AEVuZE9mUm93c2V0
+AGxhc3R3b3JkAGxhc3R3b3JkX0lzTnVsbABub3JtbmFtZQBub3JtbmFtZV9Jc051bGwAZG9tYWlu
+AGRvbWFpbl9Jc051bGwAUGFyZW50Q29tcG9uZW50AGdldF9kb21haW5yZWdleABnZXRfZW1haWxy
+ZWdleABkb21haW5yZWdleABlbWFpbHJlZ2V4AFN5c3RlbS5SZXNvdXJjZXMAUmVzb3VyY2VNYW5h
+Z2VyAHJlc291cmNlTWFuAFN5c3RlbS5HbG9iYWxpemF0aW9uAEN1bHR1cmVJbmZvAHJlc291cmNl
+Q3VsdHVyZQBnZXRfUmVzb3VyY2VNYW5hZ2VyAGdldF9DdWx0dXJlAHNldF9DdWx0dXJlAEN1bHR1
+cmUAZGVmYXVsdEluc3RhbmNlAGdldF9EZWZhdWx0AERlZmF1bHQASW5wdXRJRABJbnB1dE5hbWUA
+QnVmZmVyAE91dHB1dE1hcABSb3cAQnVmZmVyQ29sdW1uSW5kZXhlcwB2YWx1ZQBDb21wb25lbnQA
+U3lzdGVtLlJ1bnRpbWUuVmVyc2lvbmluZwBUYXJnZXRGcmFtZXdvcmtBdHRyaWJ1dGUAU3lzdGVt
+LlJlZmxlY3Rpb24AQXNzZW1ibHlUaXRsZUF0dHJpYnV0ZQBBc3NlbWJseURlc2NyaXB0aW9uQXR0
+cmlidXRlAEFzc2VtYmx5Q29uZmlndXJhdGlvbkF0dHJpYnV0ZQBBc3NlbWJseUNvbXBhbnlBdHRy
+aWJ1dGUAQXNzZW1ibHlQcm9kdWN0QXR0cmlidXRlAEFzc2VtYmx5Q29weXJpZ2h0QXR0cmlidXRl
+AEFzc2VtYmx5VHJhZGVtYXJrQXR0cmlidXRlAEFzc2VtYmx5Q3VsdHVyZUF0dHJpYnV0ZQBBc3Nl
+bWJseVZlcnNpb25BdHRyaWJ1dGUAU3lzdGVtLlJ1bnRpbWUuQ29tcGlsZXJTZXJ2aWNlcwBDb21w
+aWxhdGlvblJlbGF4YXRpb25zQXR0cmlidXRlAFJ1bnRpbWVDb21wYXRpYmlsaXR5QXR0cmlidXRl
+AFNDXzc3ZTU5NTZhZTYxZjQzMGE4NDNkMjhiMTlkYzc4ZjFjAFN0cmluZwBTdHJpbmdDb21wYXJp
+c29uAEVxdWFscwBHZXRDb2x1bW5JbmRleGVzAFNTSVNTY3JpcHRDb21wb25lbnRFbnRyeVBvaW50
+QXR0cmlidXRlAFN5c3RlbS5UZXh0LlJlZ3VsYXJFeHByZXNzaW9ucwBSZWdleABSZXBsYWNlAFNw
+bGl0AEpvaW4ATWF0Y2gAR3JvdXAAZ2V0X1N1Y2Nlc3MAQ2FwdHVyZQBnZXRfVmFsdWUAQ2hhcgBv
+cF9FcXVhbGl0eQBHZXRTdHJpbmcAc2V0X0l0ZW0ASXNOdWxsAFNldE51bGwASW52YWxpZE9wZXJh
+dGlvbkV4Y2VwdGlvbgBNaWNyb3NvZnQuU3FsU2VydmVyLkRUU1J1bnRpbWVXcmFwAE1pY3Jvc29m
+dC5TcWxTZXJ2ZXIuRHRzLlJ1bnRpbWUuV3JhcHBlcgBJRFRTVmFyaWFibGVzMTAwAGdldF9SZWFk
+T25seVZhcmlhYmxlcwBJRFRTVmFyaWFibGUxMDAAZ2V0X0l0ZW0AU2NyaXB0Q29tcG9uZW50RXZh
+bENvbnRleHQAZ2V0X0V2YWx1YXRvckNvbnRleHQASURUU0V2YWx1YXRvckNvbnRleHQxMDAAR2V0
+VmFsdWVXaXRoQ29udGV4dABTeXN0ZW0uRGlhZ25vc3RpY3MARGVidWdnZXJOb25Vc2VyQ29kZUF0
+dHJpYnV0ZQBUeXBlAFJ1bnRpbWVUeXBlSGFuZGxlAEdldFR5cGVGcm9tSGFuZGxlAEFzc2VtYmx5
+AGdldF9Bc3NlbWJseQBTeXN0ZW0uQ29tcG9uZW50TW9kZWwARWRpdG9yQnJvd3NhYmxlQXR0cmli
+dXRlAEVkaXRvckJyb3dzYWJsZVN0YXRlAENvbXBpbGVyR2VuZXJhdGVkQXR0cmlidXRlAC5jY3Rv
+cgBTQ183N2U1OTU2YWU2MWY0MzBhODQzZDI4YjE5ZGM3OGYxYy5Qcm9wZXJ0aWVzLlJlc291cmNl
+cy5yZXNvdXJjZXMAAAAPSQBuAHAAdQB0ACAAMAAAE1wAKABbAF4AKQBdACsAXAApAAADIAAAL1sA
+XgBBAC0AWgAwAC0AOQBdACsAJAB8AF4AWwBeAEEALQBaADAALQA5AF0AKwABAQAVWwBeAEEALQBa
+ADAALQA5AF0AKwABgJtJAHMATgB1AGwAbAAgAHAAcgBvAHAAZQByAHQAeQAgAGMAYQBuAG4AbwB0
+ACAAYgBlACAAcwBlAHQAIAB0AG8AIABGAGEAbABzAGUALgAgAEEAcwBzAGkAZwBuACAAYQAgAHYA
+YQBsAHUAZQAgAHQAbwAgAHQAaABlACAAYwBvAGwAdQBtAG4AIABpAG4AcwB0AGUAYQBkAC4AABlk
+AG8AbQBhAGkAbgBfAHIAZQBnAGUAeAAAF2UAbQBhAGkAbABfAHIAZQBnAGUAeAAAcVMAQwBfADcA
+NwBlADUAOQA1ADYAYQBlADYAMQBmADQAMwAwAGEAOAA0ADMAZAAyADgAYgAxADkAZABjADcAOABm
+ADEAYwAuAFAAcgBvAHAAZQByAHQAaQBlAHMALgBSAGUAcwBvAHUAcgBjAGUAcwAAAADt3ZT1Udqj
+T5AGGcv7rUUlAAiJhF3NgIDMkQi3elxWGTTgiQMGEhQDBhIYAyAAAQkgBAEIDhIVEhkFIAEBEhAJ
+IAMBEhUdCBIZAyAADgQgAQEOAyAAAgQgAQECAygADgMoAAIDBhIFBSABARIFAwYSHQMGEiEEAAAS
+HQQAABIhBQABARIhBAgAEh0ECAASIQMGEiAEAAASIAQIABIgBCABAQgGIAICDhFZBSABHQgIBAEA
+AAAGAAMODg4OBgACHQ4ODgYAAg4OHQ4GAAISZQ4OBiABHQ4dAwUAAgIODhMHCg4dDhJlDh0OBh0D
+HQMdAx0DAwYSFQMGHQgEIAEOCAUgAgEIHAQgAQIIBCAAEnkFIAESfRwFAAASgIEGIAEcEoCFCAAB
+EoCNEYCRBSAAEoCVByACAQ4SgJUEBwESHQYgAQERgJ0IAQACAAAAAAADAAABRwEAGi5ORVRGcmFt
+ZXdvcmssVmVyc2lvbj12NC4wAQBUDhRGcmFtZXdvcmtEaXNwbGF5TmFtZRAuTkVUIEZyYW1ld29y
+ayA0KAEAI1NDXzc3ZTU5NTZhZTYxZjQzMGE4NDNkMjhiMTlkYzc4ZjFjAAAFAQAAAAAjAQAeTWlj
+aGFlbCBQYWdlIEludGVybmF0aW9uYWwgUExDAAA0AQAvQ29weXJpZ2h0IEAgTWljaGFlbCBQYWdl
+IEludGVybmF0aW9uYWwgUExDIDIwMTYAAAgBAAgAAAAAAB4BAAEAVAIWV3JhcE5vbkV4Y2VwdGlv
+blRocm93cwEAAAAkOQAAAAAAAAAAAAA+OQAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMDkAAAAA
+AAAAAAAAAABfQ29yRGxsTWFpbgBtc2NvcmVlLmRsbAAAAAAA/yUAIAAQAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AQAQAAAAGAAAgAAAAAAAAAAAAAAAAAAAAQABAAAAMAAAgAAAAAAAAAAAAAAAAAAAAQAAAAAASAAA
+AFhAAABMBAAAAAAAAAAAAABMBDQAAABWAFMAXwBWAEUAUgBTAEkATwBOAF8ASQBOAEYATwAAAAAA
+vQTv/gAAAQAAAAEAPFtQFwAAAQA8W1AXPwAAAAAAAAAEAAAAAgAAAAAAAAAAAAAAAAAAAEQAAAAB
+AFYAYQByAEYAaQBsAGUASQBuAGYAbwAAAAAAJAAEAAAAVAByAGEAbgBzAGwAYQB0AGkAbwBuAAAA
+AAAAALAErAMAAAEAUwB0AHIAaQBuAGcARgBpAGwAZQBJAG4AZgBvAAAAiAMAAAEAMAAwADAAMAAw
+ADQAYgAwAAAAYAAfAAEAQwBvAG0AcABhAG4AeQBOAGEAbQBlAAAAAABNAGkAYwBoAGEAZQBsACAA
+UABhAGcAZQAgAEkAbgB0AGUAcgBuAGEAdABpAG8AbgBhAGwAIABQAEwAQwAAAAAAcAAkAAEARgBp
+AGwAZQBEAGUAcwBjAHIAaQBwAHQAaQBvAG4AAAAAAFMAQwBfADcANwBlADUAOQA1ADYAYQBlADYA
+MQBmADQAMwAwAGEAOAA0ADMAZAAyADgAYgAxADkAZABjADcAOABmADEAYwAAAEAADwABAEYAaQBs
+AGUAVgBlAHIAcwBpAG8AbgAAAAAAMQAuADAALgA1ADkANgA4AC4AMgAzADMANQA2AAAAAABwACgA
+AQBJAG4AdABlAHIAbgBhAGwATgBhAG0AZQAAAFMAQwBfADcANwBlADUAOQA1ADYAYQBlADYAMQBm
+ADQAMwAwAGEAOAA0ADMAZAAyADgAYgAxADkAZABjADcAOABmADEAYwAuAGQAbABsAAAAhAAwAAEA
+TABlAGcAYQBsAEMAbwBwAHkAcgBpAGcAaAB0AAAAQwBvAHAAeQByAGkAZwBoAHQAIABAACAATQBp
+AGMAaABhAGUAbAAgAFAAYQBnAGUAIABJAG4AdABlAHIAbgBhAHQAaQBvAG4AYQBsACAAUABMAEMA
+IAAyADAAMQA2AAAAeAAoAAEATwByAGkAZwBpAG4AYQBsAEYAaQBsAGUAbgBhAG0AZQAAAFMAQwBf
+ADcANwBlADUAOQA1ADYAYQBlADYAMQBmADQAMwAwAGEAOAA0ADMAZAAyADgAYgAxADkAZABjADcA
+OABmADEAYwAuAGQAbABsAAAAaAAkAAEAUAByAG8AZAB1AGMAdABOAGEAbQBlAAAAAABTAEMAXwA3
+ADcAZQA1ADkANQA2AGEAZQA2ADEAZgA0ADMAMABhADgANAAzAGQAMgA4AGIAMQA5AGQAYwA3ADgA
+ZgAxAGMAAABEAA8AAQBQAHIAbwBkAHUAYwB0AFYAZQByAHMAaQBvAG4AAAAxAC4AMAAuADUAOQA2
+ADgALgAyADMAMwA1ADYAAAAAAEgADwABAEEAcwBzAGUAbQBiAGwAeQAgAFYAZQByAHMAaQBvAG4A
+AAAxAC4AMAAuADUAOQA2ADgALgAyADMAMwA1ADYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAMAAAAUDkAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
+                  </arrayElements>
+                </property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the Microsoft Visual Studio Tools for Applications project. Project names must be unique within a package."
+                  name="VSTAProjectName"
+                  typeConverter="NOTBROWSABLE">SC_77e5956ae61f430a843d28b19dc78f1c</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the programming language used by the script."
+                  name="ScriptLanguage"
+                  typeConverter="Microsoft.SqlServer.VSTAHosting.ScriptingLanguages">CSharp</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a comma-separated list of read-only variables."
+                  name="ReadOnlyVariables"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ScriptUIVariablePickerDlg">User::domain_regex,User::email_regex</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a comma-separated list of read/write variables."
+                  name="ReadWriteVariables"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ScriptUIWriteableVariablePickerDlg"></property>
+                <property
+                  dataType="System.String"
+                  description="List of breakpoints present on the script."
+                  isArray="true"
+                  name="BreakpointCollection"
+                  typeConverter="NOTBROWSABLE">
+                  <arrayElements
+                    arrayElementCount="0" />
+                </property>
+                <property
+                  dataType="System.String"
+                  description="Checksum to match component metedata against compiled codes."
+                  name="MetadataChecksum"
+                  typeConverter="NOTBROWSABLE">e5b3afb63d46b7fc15b1ba1194f942b2</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ScriptComponentHost</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Get organisations\De-noise.Inputs[Input 0]"
+                  hasSideEffects="true"
+                  name="Input 0">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Get organisations\De-noise.Inputs[Input 0].Columns[last_word]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="last_word"
+                      lineageId="Package\Get organisations\Add last_word column.Outputs[Derived Column Output].Columns[last_word]"
+                      usageType="readWrite" />
+                    <inputColumn
+                      refId="Package\Get organisations\De-noise.Inputs[Input 0].Columns[norm_name]"
+                      cachedDataType="wstr"
+                      cachedLength="64"
+                      cachedName="norm_name"
+                      lineageId="Package\Get organisations\Get organisations.Outputs[ADO NET Source Output].Columns[norm_name]"
+                      usageType="readWrite" />
+                    <inputColumn
+                      refId="Package\Get organisations\De-noise.Inputs[Input 0].Columns[domain]"
+                      cachedDataType="wstr"
+                      cachedLength="64"
+                      cachedName="domain"
+                      lineageId="Package\Get organisations\Get organisations.Outputs[ADO NET Source Output].Columns[domain]"
+                      usageType="readWrite" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Get organisations\De-noise.Outputs[Output 0]"
+                  name="Output 0"
+                  synchronousInputId="Package\Get organisations\De-noise.Inputs[Input 0]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Get organisations\Domain count"
+              componentClassID="Microsoft.Aggregate"
+              contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
+              description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
+              name="Domain count"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                  name="KeyScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
+                  name="Keys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the approximate number of distinct values in a column that the aggregation counts distinctly. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no CountDistinctScale value is used."
+                  name="CountDistinctScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the exact number of distinct values in a column that the aggregation counts distinctly. If a CountDistinctScale value is specified, the value in CountDistinctKeys takes precedence."
+                  name="CountDistinctKeys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage by which memory can be extended during the aggregation. Valid values are between 1 and 100."
+                  name="AutoExtendFactor">25</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Get organisations\Domain count.Inputs[Aggregate Input 1]"
+                  name="Aggregate Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Get organisations\Domain count.Inputs[Aggregate Input 1].Columns[domain]"
+                      cachedDataType="wstr"
+                      cachedLength="64"
+                      cachedName="domain"
+                      lineageId="Package\Get organisations\Remove duplicates.Outputs[Aggregate Output 1].Columns[domain]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Get organisations\Domain count.Outputs[Aggregate Output 1]"
+                  name="Aggregate Output 1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                      name="KeyScale"
+                      typeConverter="KeyScaleType">0</property>
+                    <property
+                      dataType="System.Null"
+                      description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
+                      name="Keys" />
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Get organisations\Domain count.Outputs[Aggregate Output 1].Columns[domain]"
+                      dataType="wstr"
+                      length="64"
+                      lineageId="Package\Get organisations\Domain count.Outputs[Aggregate Output 1].Columns[domain]"
+                      name="domain">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Get organisations\Remove duplicates.Outputs[Aggregate Output 1].Columns[domain]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Get organisations\Domain count.Outputs[Aggregate Output 1].Columns[domain_count]"
+                      dataType="ui8"
+                      lineageId="Package\Get organisations\Domain count.Outputs[Aggregate Output 1].Columns[domain_count]"
+                      name="domain_count">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Get organisations\0:invalid}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">2</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Get organisations\Get organisations"
               componentClassID="Microsoft.ManagedComponentHost"
               contactInfo="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server."
-              name="Get denomallising words"
+              name="Get organisations"
               usesDispositions="true"
               version="4">
               <properties>
@@ -45,61 +1431,51 @@
                   description="Specifies the SQL statement used by the component to extract data."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT x AS word, SUM(occ_count) AS [freq]
-FROM (
-SELECT 
-  CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 1, 1) + '%' THEN '' ELSE SUBSTRING(x, 1, 1) END
-    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 2, 1) + '%' THEN '' ELSE SUBSTRING(x, 2, 1) END
-    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 3, 1) + '%' THEN '' ELSE SUBSTRING(x, 3, 1) END
-    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 4, 1) + '%' THEN '' ELSE SUBSTRING(x, 4, 1) END
-    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 5, 1) + '%' THEN '' ELSE SUBSTRING(x, 5, 1) END
-    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 6, 1) + '%' THEN '' ELSE SUBSTRING(x, 6, 1) END
-    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 7, 1) + '%' THEN '' ELSE SUBSTRING(x, 7, 1) END
-    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 8, 1) + '%' THEN '' ELSE SUBSTRING(x, 8, 1) END
-    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 9, 1) + '%' THEN '' ELSE SUBSTRING(x, 9, 1) END
-    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 10, 1) + '%' THEN '' ELSE SUBSTRING(x, 10, 1) END
-    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 11, 1) + '%' THEN '' ELSE SUBSTRING(x, 11, 1) END
-    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 12, 1) + '%' THEN '' ELSE SUBSTRING(x, 12, 1) END
-    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 13, 1) + '%' THEN '' ELSE SUBSTRING(x, 13, 1) END
-    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 14, 1) + '%' THEN '' ELSE SUBSTRING(x, 14, 1) END
-    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 15, 1) + '%' THEN '' ELSE SUBSTRING(x, 15, 1) END
-    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 16, 1) + '%' THEN '' ELSE SUBSTRING(x, 16, 1) END
-    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 17, 1) + '%' THEN '' ELSE SUBSTRING(x, 17, 1) END
-    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 18, 1) + '%' THEN '' ELSE SUBSTRING(x, 18, 1) END
-    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 19, 1) + '%' THEN '' ELSE SUBSTRING(x, 19, 1) END
-    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 20, 1) + '%' THEN '' ELSE SUBSTRING(x, 20, 1) END
-    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 21, 1) + '%' THEN '' ELSE SUBSTRING(x, 21, 1) END
-    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 22, 1) + '%' THEN '' ELSE SUBSTRING(x, 22, 1) END
-    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 23, 1) + '%' THEN '' ELSE SUBSTRING(x, 23, 1) END
-    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 24, 1) + '%' THEN '' ELSE SUBSTRING(x, 24, 1) END
-    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 25, 1) + '%' THEN '' ELSE SUBSTRING(x, 25, 1) END
-    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 26, 1) + '%' THEN '' ELSE SUBSTRING(x, 26, 1) END
-    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 27, 1) + '%' THEN '' ELSE SUBSTRING(x, 27, 1) END
-    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 28, 1) + '%' THEN '' ELSE SUBSTRING(x, 28, 1) END
-    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 29, 1) + '%' THEN '' ELSE SUBSTRING(x, 29, 1) END
-    + CASE WHEN a NOT LIKE '%' + SUBSTRING(x, 30, 1) + '%' THEN '' ELSE SUBSTRING(x, 30, 1) END AS x
-  ,occ_count
-FROM (
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">;WITH cte AS (
+SELECT DISTINCT
+  o.organisation_ref AS ref
+  ,oa.name AS name
+  ,parent_organ_ref
+  ,CAST('|' + CAST(parent_organ_ref AS VARCHAR) + '|' AS VARCHAR(4000)) AS hierarchy 
+  ,1 AS level
+FROM uk.organisation o
+  INNER JOIN uk.organ_alias oa ON o.organisation_ref = oa.organisation_ref
+UNION ALL
+SELECT
+  ref
+  ,c.name
+  ,o.parent_organ_ref
+  ,CAST(c.hierarchy + CAST(o.parent_organ_ref AS VARCHAR) + '|' AS VARCHAR(4000)) AS heirachy 
+  ,level + 1 AS level 
+FROM cte c
+  INNER JOIN uk.organisation o ON c.parent_organ_ref = o.organisation_ref
+WHERE o.parent_organ_ref IS NOT NULL
+  AND hierarchy NOT LIKE '%|' + CAST(o.parent_organ_ref AS VARCHAR) + '|%' 
+), cte_pos AS (
 SELECT 
   *
-  ,'ABCDEFGHIJKLMNOPQRSTUVWXYZ' AS a 
-FROM OPENQUERY([P7MPUK-SYB], '
-SELECT 
-  RIGHT(UPPER(TRIM(name)), CHARINDEX('' '', REVERSE(TRIM(name))) - 1) AS x
-  ,COUNT(*) AS occ_count
-FROM organisation
-WHERE name LIKE ''% %''
-  AND name IS NOT NULL
-GROUP BY RIGHT(UPPER(TRIM(name)), CHARINDEX('' '', REVERSE(TRIM(name))) - 1)
-ORDER BY 2 DESC
-')) a) a
-WHERE x != ''
-GROUP BY x
-HAVING SUM(occ_count) &gt;= 500</property>
+  ,RANK() OVER(PARTITION BY ref ORDER BY level DESC) AS pos 
+FROM cte
+)
+SELECT DISTINCT
+  ref
+  ,name
+  ,UPPER(name) AS norm_name
+  ,hierarchy
+  ,UPPER(email_address) AS domain
+FROM cte_pos org
+  INNER JOIN uk.position pos ON pos.organisation_ref = org.ref
+WHERE pos = 1
+ -- AND UPPER(email_address) LIKE '%@[A-Z0-9]%.%'
+ -- AND UPPER(email_address) NOT LIKE '%HOTMAIL%'
+ -- AND UPPER(email_address) NOT LIKE '%AOL%'
+ -- AND UPPER(email_address) NOT LIKE '%YAHOO%'
+ -- AND UPPER(email_address) NOT LIKE '%GMAIL%'
+ -- AND UPPER(email_address) NOT LIKE '%GOOGLEMAIL%'</property>
                 <property
                   dataType="System.Int32"
                   description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">30</property>
+                  name="CommandTimeout">0</property>
                 <property
                   dataType="System.Boolean"
                   description="Indicates whether to allow non-string external columns to be implicitly converted to strings at the output columns."
@@ -121,76 +1497,139 @@ HAVING SUM(occ_count) &gt;= 500</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Task\Get denomallising words.Connections[IDbConnection]"
-                  connectionManagerID="{CA099C18-4884-47C3-BA4F-335965B85796}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[source]"
+                  refId="Package\Get organisations\Get organisations.Connections[IDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[source]"
+                  connectionManagerRefId="Package.ConnectionManagers[source]"
                   description="Managed connection manager"
                   name="IDbConnection" />
               </connections>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\Get denomallising words.Outputs[ADO NET Source Output]"
+                  refId="Package\Get organisations\Get organisations.Outputs[ADO NET Source Output]"
                   name="ADO NET Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\Get denomallising words.Outputs[ADO NET Source Output].Columns[word]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Get denomallising words.Outputs[ADO NET Source Output].ExternalColumns[word]"
-                      length="30"
-                      lineageId="Package\Data Flow Task\Get denomallising words.Outputs[ADO NET Source Output].Columns[word]"
-                      name="word"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\Get denomallising words.Outputs[ADO NET Source Output].Columns[freq]"
+                      refId="Package\Get organisations\Get organisations.Outputs[ADO NET Source Output].Columns[ref]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Get denomallising words.Outputs[ADO NET Source Output].ExternalColumns[freq]"
-                      lineageId="Package\Data Flow Task\Get denomallising words.Outputs[ADO NET Source Output].Columns[freq]"
-                      name="freq"
+                      externalMetadataColumnId="Package\Get organisations\Get organisations.Outputs[ADO NET Source Output].ExternalColumns[ref]"
+                      lineageId="Package\Get organisations\Get organisations.Outputs[ADO NET Source Output].Columns[ref]"
+                      name="ref"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Get organisations\Get organisations.Outputs[ADO NET Source Output].Columns[name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Get organisations\Get organisations.Outputs[ADO NET Source Output].ExternalColumns[name]"
+                      length="64"
+                      lineageId="Package\Get organisations\Get organisations.Outputs[ADO NET Source Output].Columns[name]"
+                      name="name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Get organisations\Get organisations.Outputs[ADO NET Source Output].Columns[norm_name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Get organisations\Get organisations.Outputs[ADO NET Source Output].ExternalColumns[norm_name]"
+                      length="64"
+                      lineageId="Package\Get organisations\Get organisations.Outputs[ADO NET Source Output].Columns[norm_name]"
+                      name="norm_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Get organisations\Get organisations.Outputs[ADO NET Source Output].Columns[hierarchy]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Get organisations\Get organisations.Outputs[ADO NET Source Output].ExternalColumns[hierarchy]"
+                      length="4000"
+                      lineageId="Package\Get organisations\Get organisations.Outputs[ADO NET Source Output].Columns[hierarchy]"
+                      name="hierarchy"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Get organisations\Get organisations.Outputs[ADO NET Source Output].Columns[domain]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Get organisations\Get organisations.Outputs[ADO NET Source Output].ExternalColumns[domain]"
+                      length="64"
+                      lineageId="Package\Get organisations\Get organisations.Outputs[ADO NET Source Output].Columns[domain]"
+                      name="domain"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Get denomallising words.Outputs[ADO NET Source Output].ExternalColumns[word]"
-                      dataType="wstr"
-                      length="30"
-                      name="word" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Get denomallising words.Outputs[ADO NET Source Output].ExternalColumns[freq]"
+                      refId="Package\Get organisations\Get organisations.Outputs[ADO NET Source Output].ExternalColumns[ref]"
                       dataType="i4"
-                      name="freq" />
+                      name="ref" />
+                    <externalMetadataColumn
+                      refId="Package\Get organisations\Get organisations.Outputs[ADO NET Source Output].ExternalColumns[name]"
+                      dataType="wstr"
+                      length="64"
+                      name="name" />
+                    <externalMetadataColumn
+                      refId="Package\Get organisations\Get organisations.Outputs[ADO NET Source Output].ExternalColumns[norm_name]"
+                      dataType="wstr"
+                      length="64"
+                      name="norm_name" />
+                    <externalMetadataColumn
+                      refId="Package\Get organisations\Get organisations.Outputs[ADO NET Source Output].ExternalColumns[hierarchy]"
+                      dataType="wstr"
+                      length="4000"
+                      name="hierarchy" />
+                    <externalMetadataColumn
+                      refId="Package\Get organisations\Get organisations.Outputs[ADO NET Source Output].ExternalColumns[domain]"
+                      dataType="wstr"
+                      length="64"
+                      name="domain" />
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Data Flow Task\Get denomallising words.Outputs[ADO NET Source Error Output]"
+                  refId="Package\Get organisations\Get organisations.Outputs[ADO NET Source Error Output]"
                   isErrorOut="true"
                   name="ADO NET Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\Get denomallising words.Outputs[ADO NET Source Error Output].Columns[word]"
+                      refId="Package\Get organisations\Get organisations.Outputs[ADO NET Source Error Output].Columns[ref]"
+                      dataType="i4"
+                      lineageId="Package\Get organisations\Get organisations.Outputs[ADO NET Source Error Output].Columns[ref]"
+                      name="ref" />
+                    <outputColumn
+                      refId="Package\Get organisations\Get organisations.Outputs[ADO NET Source Error Output].Columns[name]"
                       dataType="wstr"
-                      length="30"
-                      lineageId="Package\Data Flow Task\Get denomallising words.Outputs[ADO NET Source Error Output].Columns[word]"
-                      name="word" />
+                      length="64"
+                      lineageId="Package\Get organisations\Get organisations.Outputs[ADO NET Source Error Output].Columns[name]"
+                      name="name" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Get denomallising words.Outputs[ADO NET Source Error Output].Columns[freq]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Task\Get denomallising words.Outputs[ADO NET Source Error Output].Columns[freq]"
-                      name="freq" />
+                      refId="Package\Get organisations\Get organisations.Outputs[ADO NET Source Error Output].Columns[norm_name]"
+                      dataType="wstr"
+                      length="64"
+                      lineageId="Package\Get organisations\Get organisations.Outputs[ADO NET Source Error Output].Columns[norm_name]"
+                      name="norm_name" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Get denomallising words.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                      refId="Package\Get organisations\Get organisations.Outputs[ADO NET Source Error Output].Columns[hierarchy]"
+                      dataType="wstr"
+                      length="4000"
+                      lineageId="Package\Get organisations\Get organisations.Outputs[ADO NET Source Error Output].Columns[hierarchy]"
+                      name="hierarchy" />
+                    <outputColumn
+                      refId="Package\Get organisations\Get organisations.Outputs[ADO NET Source Error Output].Columns[domain]"
+                      dataType="wstr"
+                      length="64"
+                      lineageId="Package\Get organisations\Get organisations.Outputs[ADO NET Source Error Output].Columns[domain]"
+                      name="domain" />
+                    <outputColumn
+                      refId="Package\Get organisations\Get organisations.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\Get denomallising words.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Get organisations\Get organisations.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Get denomallising words.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Get organisations\Get organisations.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\Get denomallising words.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Get organisations\Get organisations.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -198,11 +1637,1372 @@ HAVING SUM(occ_count) &gt;= 500</property>
                 </output>
               </outputs>
             </component>
+            <component
+              refId="Package\Get organisations\Load table"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination."
+              name="Load table"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="The Destination database table name."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dbo"."##uk_match_organisation"</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specify the number of rows per batch. The default is 0 which uses the same size as SSIS internal buffer. "
+                  expressionType="Notify"
+                  name="BatchSize">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out. A value of 0 indicates infinite time-out. "
+                  expressionType="Notify"
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether to use the SqlBulkCopy interface to improve the performance of bulk insert operations. Only certain providers support this interface."
+                  expressionType="Notify"
+                  name="UseBulkInsertWhenPossible">true</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Get organisations\Load table.Connections[IDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[target]"
+                  connectionManagerRefId="Package.ConnectionManagers[target]"
+                  description="Managed connection manager"
+                  name="IDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Get organisations\Load table.Inputs[ADO NET Destination Input]"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="ADO NET Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Get organisations\Load table.Inputs[ADO NET Destination Input].Columns[ref]"
+                      cachedDataType="i4"
+                      cachedName="ref"
+                      externalMetadataColumnId="Package\Get organisations\Load table.Inputs[ADO NET Destination Input].ExternalColumns[ref]"
+                      lineageId="Package\Get organisations\Merge Join.Outputs[Merge Join Output].Columns[ref]" />
+                    <inputColumn
+                      refId="Package\Get organisations\Load table.Inputs[ADO NET Destination Input].Columns[name]"
+                      cachedDataType="wstr"
+                      cachedLength="64"
+                      cachedName="name"
+                      externalMetadataColumnId="Package\Get organisations\Load table.Inputs[ADO NET Destination Input].ExternalColumns[name]"
+                      lineageId="Package\Get organisations\Merge Join.Outputs[Merge Join Output].Columns[name]" />
+                    <inputColumn
+                      refId="Package\Get organisations\Load table.Inputs[ADO NET Destination Input].Columns[norm_name]"
+                      cachedDataType="wstr"
+                      cachedLength="64"
+                      cachedName="norm_name"
+                      externalMetadataColumnId="Package\Get organisations\Load table.Inputs[ADO NET Destination Input].ExternalColumns[norm_name]"
+                      lineageId="Package\Get organisations\Merge Join.Outputs[Merge Join Output].Columns[norm_name]" />
+                    <inputColumn
+                      refId="Package\Get organisations\Load table.Inputs[ADO NET Destination Input].Columns[hierarchy]"
+                      cachedDataType="wstr"
+                      cachedLength="4000"
+                      cachedName="hierarchy"
+                      externalMetadataColumnId="Package\Get organisations\Load table.Inputs[ADO NET Destination Input].ExternalColumns[hierarchy]"
+                      lineageId="Package\Get organisations\Merge Join.Outputs[Merge Join Output].Columns[hierarchy]" />
+                    <inputColumn
+                      refId="Package\Get organisations\Load table.Inputs[ADO NET Destination Input].Columns[domain]"
+                      cachedDataType="wstr"
+                      cachedLength="64"
+                      cachedName="domain"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\Get organisations\Load table.Inputs[ADO NET Destination Input].ExternalColumns[domain]"
+                      lineageId="Package\Get organisations\Merge Join.Outputs[Merge Join Output].Columns[domain]" />
+                    <inputColumn
+                      refId="Package\Get organisations\Load table.Inputs[ADO NET Destination Input].Columns[last_word]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="last_word"
+                      externalMetadataColumnId="Package\Get organisations\Load table.Inputs[ADO NET Destination Input].ExternalColumns[last_word]"
+                      lineageId="Package\Get organisations\Merge Join.Outputs[Merge Join Output].Columns[last_word]" />
+                    <inputColumn
+                      refId="Package\Get organisations\Load table.Inputs[ADO NET Destination Input].Columns[email_count]"
+                      cachedDataType="i4"
+                      cachedName="email_count"
+                      externalMetadataColumnId="Package\Get organisations\Load table.Inputs[ADO NET Destination Input].ExternalColumns[email_count]"
+                      lineageId="Package\Get organisations\Merge Join.Outputs[Merge Join Output].Columns[email_count]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Get organisations\Load table.Inputs[ADO NET Destination Input].ExternalColumns[ref]"
+                      dataType="i4"
+                      name="ref" />
+                    <externalMetadataColumn
+                      refId="Package\Get organisations\Load table.Inputs[ADO NET Destination Input].ExternalColumns[name]"
+                      dataType="wstr"
+                      length="255"
+                      name="name" />
+                    <externalMetadataColumn
+                      refId="Package\Get organisations\Load table.Inputs[ADO NET Destination Input].ExternalColumns[norm_name]"
+                      dataType="wstr"
+                      length="255"
+                      name="norm_name" />
+                    <externalMetadataColumn
+                      refId="Package\Get organisations\Load table.Inputs[ADO NET Destination Input].ExternalColumns[last_word]"
+                      dataType="wstr"
+                      length="255"
+                      name="last_word" />
+                    <externalMetadataColumn
+                      refId="Package\Get organisations\Load table.Inputs[ADO NET Destination Input].ExternalColumns[hierarchy]"
+                      dataType="wstr"
+                      length="4000"
+                      name="hierarchy" />
+                    <externalMetadataColumn
+                      refId="Package\Get organisations\Load table.Inputs[ADO NET Destination Input].ExternalColumns[domain]"
+                      dataType="wstr"
+                      length="255"
+                      name="domain" />
+                    <externalMetadataColumn
+                      refId="Package\Get organisations\Load table.Inputs[ADO NET Destination Input].ExternalColumns[email_count]"
+                      dataType="i4"
+                      name="email_count" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Get organisations\Load table.Outputs[ADO NET Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="ADO NET Destination Error Output"
+                  synchronousInputId="Package\Get organisations\Load table.Inputs[ADO NET Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Get organisations\Load table.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Get organisations\Load table.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Get organisations\Load table.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Get organisations\Load table.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Get organisations\Merge Join"
+              componentClassID="Microsoft.MergeJoin"
+              contactInfo="Merge Join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combine two sorted data flows into one using the FULL, LEFT, or INNER join. We recommend this transformation when data flows can be sorted at their sources."
+              name="Merge Join"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of join to perform."
+                  name="JoinType"
+                  typeConverter="JoinType">2</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of columns in the ordering key."
+                  name="NumKeyColumns">1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the null values are treated as equal values."
+                  name="TreatNullsAsEqual">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Indicates the requested maximum buffers per input before blocking."
+                  name="MaxBuffersPerInput">5</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Get organisations\Merge Join.Inputs[Merge Join Left Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Left Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Get organisations\Merge Join.Inputs[Merge Join Left Input].Columns[domain]"
+                      cachedDataType="wstr"
+                      cachedLength="64"
+                      cachedName="domain"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Get organisations\Sort.Outputs[Sort Output].Columns[domain]" />
+                    <inputColumn
+                      refId="Package\Get organisations\Merge Join.Inputs[Merge Join Left Input].Columns[ref]"
+                      cachedDataType="i4"
+                      cachedName="ref"
+                      lineageId="Package\Get organisations\Sort.Outputs[Sort Output].Columns[ref]" />
+                    <inputColumn
+                      refId="Package\Get organisations\Merge Join.Inputs[Merge Join Left Input].Columns[name]"
+                      cachedDataType="wstr"
+                      cachedLength="64"
+                      cachedName="name"
+                      lineageId="Package\Get organisations\Sort.Outputs[Sort Output].Columns[name]" />
+                    <inputColumn
+                      refId="Package\Get organisations\Merge Join.Inputs[Merge Join Left Input].Columns[norm_name]"
+                      cachedDataType="wstr"
+                      cachedLength="64"
+                      cachedName="norm_name"
+                      lineageId="Package\Get organisations\Sort.Outputs[Sort Output].Columns[norm_name]" />
+                    <inputColumn
+                      refId="Package\Get organisations\Merge Join.Inputs[Merge Join Left Input].Columns[hierarchy]"
+                      cachedDataType="wstr"
+                      cachedLength="4000"
+                      cachedName="hierarchy"
+                      lineageId="Package\Get organisations\Sort.Outputs[Sort Output].Columns[hierarchy]" />
+                    <inputColumn
+                      refId="Package\Get organisations\Merge Join.Inputs[Merge Join Left Input].Columns[last_word]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="last_word"
+                      lineageId="Package\Get organisations\Sort.Outputs[Sort Output].Columns[last_word]" />
+                    <inputColumn
+                      refId="Package\Get organisations\Merge Join.Inputs[Merge Join Left Input].Columns[count]"
+                      cachedDataType="ui8"
+                      cachedName="count"
+                      lineageId="Package\Get organisations\Sort.Outputs[Sort Output].Columns[count]" />
+                    <inputColumn
+                      refId="Package\Get organisations\Merge Join.Inputs[Merge Join Left Input].Columns[email_count]"
+                      cachedDataType="i4"
+                      cachedName="email_count"
+                      lineageId="Package\Get organisations\Sort.Outputs[Sort Output].Columns[email_count]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Get organisations\Merge Join.Inputs[Merge Join Right Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Right Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Get organisations\Merge Join.Inputs[Merge Join Right Input].Columns[domain]"
+                      cachedDataType="wstr"
+                      cachedLength="64"
+                      cachedName="domain"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Get organisations\Sort 1.Outputs[Sort Output].Columns[domain]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Get organisations\Merge Join.Outputs[Merge Join Output]"
+                  isSorted="true"
+                  name="Merge Join Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Get organisations\Merge Join.Outputs[Merge Join Output].Columns[ref]"
+                      dataType="i4"
+                      lineageId="Package\Get organisations\Merge Join.Outputs[Merge Join Output].Columns[ref]"
+                      name="ref">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Get organisations\Merge Join.Inputs[Merge Join Left Input].Columns[ref]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Get organisations\Merge Join.Outputs[Merge Join Output].Columns[name]"
+                      dataType="wstr"
+                      length="64"
+                      lineageId="Package\Get organisations\Merge Join.Outputs[Merge Join Output].Columns[name]"
+                      name="name">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Get organisations\Merge Join.Inputs[Merge Join Left Input].Columns[name]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Get organisations\Merge Join.Outputs[Merge Join Output].Columns[norm_name]"
+                      dataType="wstr"
+                      length="64"
+                      lineageId="Package\Get organisations\Merge Join.Outputs[Merge Join Output].Columns[norm_name]"
+                      name="norm_name">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Get organisations\Merge Join.Inputs[Merge Join Left Input].Columns[norm_name]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Get organisations\Merge Join.Outputs[Merge Join Output].Columns[hierarchy]"
+                      dataType="wstr"
+                      length="4000"
+                      lineageId="Package\Get organisations\Merge Join.Outputs[Merge Join Output].Columns[hierarchy]"
+                      name="hierarchy">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Get organisations\Merge Join.Inputs[Merge Join Left Input].Columns[hierarchy]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Get organisations\Merge Join.Outputs[Merge Join Output].Columns[domain]"
+                      dataType="wstr"
+                      length="64"
+                      lineageId="Package\Get organisations\Merge Join.Outputs[Merge Join Output].Columns[domain]"
+                      name="domain"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Get organisations\Merge Join.Inputs[Merge Join Left Input].Columns[domain]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Get organisations\Merge Join.Outputs[Merge Join Output].Columns[last_word]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Get organisations\Merge Join.Outputs[Merge Join Output].Columns[last_word]"
+                      name="last_word">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Get organisations\Merge Join.Inputs[Merge Join Left Input].Columns[last_word]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Get organisations\Merge Join.Outputs[Merge Join Output].Columns[count]"
+                      dataType="ui8"
+                      lineageId="Package\Get organisations\Merge Join.Outputs[Merge Join Output].Columns[count]"
+                      name="count">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Get organisations\Merge Join.Inputs[Merge Join Left Input].Columns[count]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Get organisations\Merge Join.Outputs[Merge Join Output].Columns[email_count]"
+                      dataType="i4"
+                      lineageId="Package\Get organisations\Merge Join.Outputs[Merge Join Output].Columns[email_count]"
+                      name="email_count">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Get organisations\Merge Join.Inputs[Merge Join Left Input].Columns[email_count]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Get organisations\Multicast"
+              componentClassID="Microsoft.Multicast"
+              contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners."
+              name="Multicast">
+              <inputs>
+                <input
+                  refId="Package\Get organisations\Multicast.Inputs[Multicast Input 1]"
+                  name="Multicast Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Get organisations\Multicast.Outputs[Multicast Output 1]"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 1"
+                  synchronousInputId="Package\Get organisations\Multicast.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Get organisations\Multicast.Outputs[Multicast Output 2]"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 2"
+                  synchronousInputId="Package\Get organisations\Multicast.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Get organisations\Multicast.Outputs[Multicast Output 3]"
+                  dangling="true"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 3"
+                  synchronousInputId="Package\Get organisations\Multicast.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Get organisations\Remove duplicates"
+              componentClassID="Microsoft.Aggregate"
+              contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
+              description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
+              name="Remove duplicates"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                  name="KeyScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
+                  name="Keys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the approximate number of distinct values in a column that the aggregation counts distinctly. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no CountDistinctScale value is used."
+                  name="CountDistinctScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the exact number of distinct values in a column that the aggregation counts distinctly. If a CountDistinctScale value is specified, the value in CountDistinctKeys takes precedence."
+                  name="CountDistinctKeys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage by which memory can be extended during the aggregation. Valid values are between 1 and 100."
+                  name="AutoExtendFactor">25</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Get organisations\Remove duplicates.Inputs[Aggregate Input 1]"
+                  name="Aggregate Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Get organisations\Remove duplicates.Inputs[Aggregate Input 1].Columns[ref]"
+                      cachedDataType="i4"
+                      cachedName="ref"
+                      lineageId="Package\Get organisations\Get organisations.Outputs[ADO NET Source Output].Columns[ref]" />
+                    <inputColumn
+                      refId="Package\Get organisations\Remove duplicates.Inputs[Aggregate Input 1].Columns[name]"
+                      cachedDataType="wstr"
+                      cachedLength="64"
+                      cachedName="name"
+                      lineageId="Package\Get organisations\Get organisations.Outputs[ADO NET Source Output].Columns[name]" />
+                    <inputColumn
+                      refId="Package\Get organisations\Remove duplicates.Inputs[Aggregate Input 1].Columns[norm_name]"
+                      cachedDataType="wstr"
+                      cachedLength="64"
+                      cachedName="norm_name"
+                      lineageId="Package\Get organisations\Get organisations.Outputs[ADO NET Source Output].Columns[norm_name]" />
+                    <inputColumn
+                      refId="Package\Get organisations\Remove duplicates.Inputs[Aggregate Input 1].Columns[hierarchy]"
+                      cachedDataType="wstr"
+                      cachedLength="4000"
+                      cachedName="hierarchy"
+                      lineageId="Package\Get organisations\Get organisations.Outputs[ADO NET Source Output].Columns[hierarchy]" />
+                    <inputColumn
+                      refId="Package\Get organisations\Remove duplicates.Inputs[Aggregate Input 1].Columns[domain]"
+                      cachedDataType="wstr"
+                      cachedLength="64"
+                      cachedName="domain"
+                      lineageId="Package\Get organisations\Get organisations.Outputs[ADO NET Source Output].Columns[domain]" />
+                    <inputColumn
+                      refId="Package\Get organisations\Remove duplicates.Inputs[Aggregate Input 1].Columns[last_word]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="last_word"
+                      lineageId="Package\Get organisations\Add last_word column.Outputs[Derived Column Output].Columns[last_word]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Get organisations\Remove duplicates.Outputs[Aggregate Output 1]"
+                  name="Aggregate Output 1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                      name="KeyScale"
+                      typeConverter="KeyScaleType">0</property>
+                    <property
+                      dataType="System.Null"
+                      description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
+                      name="Keys" />
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Get organisations\Remove duplicates.Outputs[Aggregate Output 1].Columns[ref]"
+                      dataType="i4"
+                      lineageId="Package\Get organisations\Remove duplicates.Outputs[Aggregate Output 1].Columns[ref]"
+                      name="ref">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Get organisations\Get organisations.Outputs[ADO NET Source Output].Columns[ref]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Get organisations\Remove duplicates.Outputs[Aggregate Output 1].Columns[name]"
+                      dataType="wstr"
+                      length="64"
+                      lineageId="Package\Get organisations\Remove duplicates.Outputs[Aggregate Output 1].Columns[name]"
+                      name="name">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Get organisations\Get organisations.Outputs[ADO NET Source Output].Columns[name]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Get organisations\Remove duplicates.Outputs[Aggregate Output 1].Columns[norm_name]"
+                      dataType="wstr"
+                      length="64"
+                      lineageId="Package\Get organisations\Remove duplicates.Outputs[Aggregate Output 1].Columns[norm_name]"
+                      name="norm_name">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Get organisations\Get organisations.Outputs[ADO NET Source Output].Columns[norm_name]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Get organisations\Remove duplicates.Outputs[Aggregate Output 1].Columns[hierarchy]"
+                      dataType="wstr"
+                      length="4000"
+                      lineageId="Package\Get organisations\Remove duplicates.Outputs[Aggregate Output 1].Columns[hierarchy]"
+                      name="hierarchy">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Get organisations\Get organisations.Outputs[ADO NET Source Output].Columns[hierarchy]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Get organisations\Remove duplicates.Outputs[Aggregate Output 1].Columns[domain]"
+                      dataType="wstr"
+                      length="64"
+                      lineageId="Package\Get organisations\Remove duplicates.Outputs[Aggregate Output 1].Columns[domain]"
+                      name="domain">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Get organisations\Get organisations.Outputs[ADO NET Source Output].Columns[domain]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Get organisations\Remove duplicates.Outputs[Aggregate Output 1].Columns[last_word]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Get organisations\Remove duplicates.Outputs[Aggregate Output 1].Columns[last_word]"
+                      name="last_word">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Get organisations\Add last_word column.Outputs[Derived Column Output].Columns[last_word]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Get organisations\Remove duplicates.Outputs[Aggregate Output 1].Columns[count]"
+                      dataType="ui8"
+                      lineageId="Package\Get organisations\Remove duplicates.Outputs[Aggregate Output 1].Columns[count]"
+                      name="count">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Get organisations\0:invalid}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">2</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Get organisations\Remove null domains"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Remove null domains"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Get organisations\Remove null domains.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Get organisations\Remove null domains.Inputs[Conditional Split Input].Columns[domain]"
+                      cachedDataType="wstr"
+                      cachedLength="64"
+                      cachedName="domain"
+                      lineageId="Package\Get organisations\Get organisations.Outputs[ADO NET Source Output].Columns[domain]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Get organisations\Remove null domains.Outputs[Not null]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Not null"
+                  synchronousInputId="Package\Get organisations\Remove null domains.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">![ISNULL](#{Package\Get organisations\Get organisations.Outputs[ADO NET Source Output].Columns[domain]})</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">!ISNULL(domain)</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Get organisations\Remove null domains.Outputs[Conditional Split Default Output]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Conditional Split Default Output"
+                  synchronousInputId="Package\Get organisations\Remove null domains.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Get organisations\Remove null domains.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\Get organisations\Remove null domains.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Get organisations\Remove null domains.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Get organisations\Remove null domains.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Get organisations\Remove null domains.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Get organisations\Remove null domains.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Get organisations\Remove single domains"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Remove single domains"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Get organisations\Remove single domains.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Get organisations\Remove single domains.Inputs[Conditional Split Input].Columns[domain_count]"
+                      cachedDataType="ui8"
+                      cachedName="domain_count"
+                      lineageId="Package\Get organisations\Domain count.Outputs[Aggregate Output 1].Columns[domain_count]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Get organisations\Remove single domains.Outputs[Non singles]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Non singles"
+                  synchronousInputId="Package\Get organisations\Remove single domains.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">#{Package\Get organisations\Domain count.Outputs[Aggregate Output 1].Columns[domain_count]} &gt; 1.0</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">domain_count &gt; 1.0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Get organisations\Remove single domains.Outputs[Conditional Split Default Output]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Conditional Split Default Output"
+                  synchronousInputId="Package\Get organisations\Remove single domains.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Get organisations\Remove single domains.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\Get organisations\Remove single domains.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Get organisations\Remove single domains.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Get organisations\Remove single domains.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Get organisations\Remove single domains.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Get organisations\Remove single domains.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Get organisations\Sort"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Get organisations\Sort.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Get organisations\Sort.Inputs[Sort Input].Columns[ref]"
+                      cachedDataType="i4"
+                      cachedName="ref"
+                      lineageId="Package\Get organisations\Remove duplicates.Outputs[Aggregate Output 1].Columns[ref]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Get organisations\Sort.Inputs[Sort Input].Columns[name]"
+                      cachedDataType="wstr"
+                      cachedLength="64"
+                      cachedName="name"
+                      lineageId="Package\Get organisations\Remove duplicates.Outputs[Aggregate Output 1].Columns[name]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Get organisations\Sort.Inputs[Sort Input].Columns[norm_name]"
+                      cachedDataType="wstr"
+                      cachedLength="64"
+                      cachedName="norm_name"
+                      lineageId="Package\Get organisations\Remove duplicates.Outputs[Aggregate Output 1].Columns[norm_name]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Get organisations\Sort.Inputs[Sort Input].Columns[hierarchy]"
+                      cachedDataType="wstr"
+                      cachedLength="4000"
+                      cachedName="hierarchy"
+                      lineageId="Package\Get organisations\Remove duplicates.Outputs[Aggregate Output 1].Columns[hierarchy]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Get organisations\Sort.Inputs[Sort Input].Columns[domain]"
+                      cachedDataType="wstr"
+                      cachedLength="64"
+                      cachedName="domain"
+                      lineageId="Package\Get organisations\Remove duplicates.Outputs[Aggregate Output 1].Columns[domain]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Get organisations\Sort.Inputs[Sort Input].Columns[last_word]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="last_word"
+                      lineageId="Package\Get organisations\Remove duplicates.Outputs[Aggregate Output 1].Columns[last_word]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Get organisations\Sort.Inputs[Sort Input].Columns[count]"
+                      cachedDataType="ui8"
+                      cachedName="count"
+                      lineageId="Package\Get organisations\Remove duplicates.Outputs[Aggregate Output 1].Columns[count]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Get organisations\Sort.Inputs[Sort Input].Columns[email_count]"
+                      cachedDataType="i4"
+                      cachedName="email_count"
+                      lineageId="Package\Get organisations\Data Conversion.Outputs[Data Conversion Output].Columns[email_count]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Get organisations\Sort.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Get organisations\Sort.Outputs[Sort Output].Columns[ref]"
+                      dataType="i4"
+                      lineageId="Package\Get organisations\Sort.Outputs[Sort Output].Columns[ref]"
+                      name="ref">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Get organisations\Remove duplicates.Outputs[Aggregate Output 1].Columns[ref]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Get organisations\Sort.Outputs[Sort Output].Columns[name]"
+                      dataType="wstr"
+                      length="64"
+                      lineageId="Package\Get organisations\Sort.Outputs[Sort Output].Columns[name]"
+                      name="name">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Get organisations\Remove duplicates.Outputs[Aggregate Output 1].Columns[name]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Get organisations\Sort.Outputs[Sort Output].Columns[norm_name]"
+                      dataType="wstr"
+                      length="64"
+                      lineageId="Package\Get organisations\Sort.Outputs[Sort Output].Columns[norm_name]"
+                      name="norm_name">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Get organisations\Remove duplicates.Outputs[Aggregate Output 1].Columns[norm_name]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Get organisations\Sort.Outputs[Sort Output].Columns[hierarchy]"
+                      dataType="wstr"
+                      length="4000"
+                      lineageId="Package\Get organisations\Sort.Outputs[Sort Output].Columns[hierarchy]"
+                      name="hierarchy">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Get organisations\Remove duplicates.Outputs[Aggregate Output 1].Columns[hierarchy]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Get organisations\Sort.Outputs[Sort Output].Columns[domain]"
+                      dataType="wstr"
+                      length="64"
+                      lineageId="Package\Get organisations\Sort.Outputs[Sort Output].Columns[domain]"
+                      name="domain"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Get organisations\Remove duplicates.Outputs[Aggregate Output 1].Columns[domain]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Get organisations\Sort.Outputs[Sort Output].Columns[last_word]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Get organisations\Sort.Outputs[Sort Output].Columns[last_word]"
+                      name="last_word">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Get organisations\Remove duplicates.Outputs[Aggregate Output 1].Columns[last_word]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Get organisations\Sort.Outputs[Sort Output].Columns[count]"
+                      dataType="ui8"
+                      lineageId="Package\Get organisations\Sort.Outputs[Sort Output].Columns[count]"
+                      name="count">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Get organisations\Remove duplicates.Outputs[Aggregate Output 1].Columns[count]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Get organisations\Sort.Outputs[Sort Output].Columns[email_count]"
+                      dataType="i4"
+                      lineageId="Package\Get organisations\Sort.Outputs[Sort Output].Columns[email_count]"
+                      name="email_count">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Get organisations\Data Conversion.Outputs[Data Conversion Output].Columns[email_count]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Get organisations\Sort 1"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort 1"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Get organisations\Sort 1.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Get organisations\Sort 1.Inputs[Sort Input].Columns[domain]"
+                      cachedDataType="wstr"
+                      cachedLength="64"
+                      cachedName="domain"
+                      lineageId="Package\Get organisations\Domain count.Outputs[Aggregate Output 1].Columns[domain]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Get organisations\Sort 1.Inputs[Sort Input].Columns[domain_count]"
+                      cachedDataType="ui8"
+                      cachedName="domain_count"
+                      lineageId="Package\Get organisations\Domain count.Outputs[Aggregate Output 1].Columns[domain_count]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Get organisations\Sort 1.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Get organisations\Sort 1.Outputs[Sort Output].Columns[domain]"
+                      dataType="wstr"
+                      length="64"
+                      lineageId="Package\Get organisations\Sort 1.Outputs[Sort Output].Columns[domain]"
+                      name="domain"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Get organisations\Domain count.Outputs[Aggregate Output 1].Columns[domain]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Get organisations\Sort 1.Outputs[Sort Output].Columns[domain_count]"
+                      dataType="ui8"
+                      lineageId="Package\Get organisations\Sort 1.Outputs[Sort Output].Columns[domain_count]"
+                      name="domain_count">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Get organisations\Domain count.Outputs[Aggregate Output 1].Columns[domain_count]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
           </components>
+          <paths>
+            <path
+              refId="Package\Get organisations.Paths[ADO NET Source Output]"
+              endId="Package\Get organisations\Add last_word column.Inputs[Derived Column Input]"
+              name="ADO NET Source Output"
+              startId="Package\Get organisations\Get organisations.Outputs[ADO NET Source Output]" />
+            <path
+              refId="Package\Get organisations.Paths[Aggregate Output 1]"
+              endId="Package\Get organisations\Data Conversion.Inputs[Data Conversion Input]"
+              name="Aggregate Output 1"
+              startId="Package\Get organisations\Remove duplicates.Outputs[Aggregate Output 1]" />
+            <path
+              refId="Package\Get organisations.Paths[Aggregate Output 11]"
+              endId="Package\Get organisations\Remove single domains.Inputs[Conditional Split Input]"
+              name="Aggregate Output 1"
+              startId="Package\Get organisations\Domain count.Outputs[Aggregate Output 1]" />
+            <path
+              refId="Package\Get organisations.Paths[Data Conversion Output]"
+              endId="Package\Get organisations\Multicast.Inputs[Multicast Input 1]"
+              name="Data Conversion Output"
+              startId="Package\Get organisations\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Get organisations.Paths[Derived Column Output]"
+              endId="Package\Get organisations\De-noise.Inputs[Input 0]"
+              name="Derived Column Output"
+              startId="Package\Get organisations\Add last_word column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Get organisations.Paths[Merge Join Output]"
+              endId="Package\Get organisations\Load table.Inputs[ADO NET Destination Input]"
+              name="Merge Join Output"
+              startId="Package\Get organisations\Merge Join.Outputs[Merge Join Output]" />
+            <path
+              refId="Package\Get organisations.Paths[Multicast Output 1]"
+              endId="Package\Get organisations\Domain count.Inputs[Aggregate Input 1]"
+              name="Multicast Output 1"
+              startId="Package\Get organisations\Multicast.Outputs[Multicast Output 1]" />
+            <path
+              refId="Package\Get organisations.Paths[Multicast Output 2]"
+              endId="Package\Get organisations\Sort.Inputs[Sort Input]"
+              name="Multicast Output 2"
+              startId="Package\Get organisations\Multicast.Outputs[Multicast Output 2]" />
+            <path
+              refId="Package\Get organisations.Paths[Non singles]"
+              endId="Package\Get organisations\Sort 1.Inputs[Sort Input]"
+              name="Non singles"
+              startId="Package\Get organisations\Remove single domains.Outputs[Non singles]" />
+            <path
+              refId="Package\Get organisations.Paths[Not null]"
+              endId="Package\Get organisations\Remove duplicates.Inputs[Aggregate Input 1]"
+              name="Not null"
+              startId="Package\Get organisations\Remove null domains.Outputs[Not null]" />
+            <path
+              refId="Package\Get organisations.Paths[Output 0]"
+              endId="Package\Get organisations\Remove null domains.Inputs[Conditional Split Input]"
+              name="Output 0"
+              startId="Package\Get organisations\De-noise.Outputs[Output 0]" />
+            <path
+              refId="Package\Get organisations.Paths[Sort Output]"
+              endId="Package\Get organisations\Merge Join.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\Get organisations\Sort.Outputs[Sort Output]" />
+            <path
+              refId="Package\Get organisations.Paths[Sort Output1]"
+              endId="Package\Get organisations\Merge Join.Inputs[Merge Join Right Input]"
+              name="Sort Output"
+              startId="Package\Get organisations\Sort 1.Outputs[Sort Output]" />
+          </paths>
         </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Remove last words"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{B9BCB1F1-0301-4685-9187-4F67F8D7D1ED}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Remove last words"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{DF2B02C5-883B-4BAA-B3D9-17A96036ABE2}"
+          SQLTask:SqlStatementSource="DECLARE @word VARCHAR(255)&#xA;DECLARE @dummy INT&#xA;DECLARE w_cursor CURSOR FOR&#xA;  SELECT TOP 0.5 PERCENT&#xA;    last_word&#xA;    ,COUNT(*) AS last_word_count&#xA;  FROM ##uk_match_organisation&#xA;  WHERE LEN(last_word) &gt; 2&#xA;  GROUP BY&#xA;    last_word&#xA;  ORDER BY 2 DESC&#xA;&#xA;OPEN w_cursor&#xA;&#xA;FETCH NEXT FROM w_cursor INTO @word, @dummy&#xA;&#xA;WHILE @@FETCH_STATUS = 0&#xA;&#xA;BEGIN&#xA; &#xA; UPDATE ##uk_match_organisation&#xA;&#xA;  SET norm_name = REPLACE(norm_name, @word, '')&#xA;&#xA;  WHERE norm_name LIKE '%' + @word + ' %' OR norm_name LIKE '%' + @word&#xA;&#xA;  FETCH NEXT FROM w_cursor INTO @word, @dummy&#xA;&#xA;END&#xA;&#xA;CLOSE w_cursor   &#xA;&#xA;DEALLOCATE w_cursor&#xA;&#xA;UPDATE ##uk_match_organisation&#xA;&#xA;SET norm_name = REPLACE(norm_name, ' ', '')&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
   </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{78B0F7C5-59BD-4D5D-BC4B-CB5938E7DC92}"
+      DTS:From="Package\Create table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Get organisations" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{ACC9E4CC-8089-40E9-9948-EFCB90D6747D}"
+      DTS:From="Package\Get organisations"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Remove last words" />
+  </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
 <!--If you manually edit this section and make a mistake, you can delete it. -->
@@ -214,28 +3014,498 @@ HAVING SUM(occ_count) &gt;= 500</property>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="152,41.6"
-          Id="Package\Data Flow Task"
-          TopLeft="173.142860091462,59.3411773028258" />
+          Size="156.8,41.6"
+          Id="Package\Create table"
+          TopLeft="144.000002452305,64.2823524178105" />
+        <NodeLayout
+          Size="163.2,41.6"
+          Id="Package\Get organisations"
+          TopLeft="153.714288332024,148.047060899834" />
+        <NodeLayout
+          Size="169.6,41.6"
+          Id="Package\Remove last words"
+          TopLeft="152.000002588545,247.152944642697" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="222.400002452305,105.882352417811">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="12.9142858797195,42.164708482023"
+              Start="0,0"
+              End="12.9142858797195,34.664708482023">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.0823542410115" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.0823542410115"
+                    Point2="0,21.0823542410115"
+                    Point3="4,21.0823542410115" />
+                  <mssgle:LineSegment
+                    End="8.9142858797195,21.0823542410115" />
+                  <mssgle:CubicBezierSegment
+                    Point1="8.9142858797195,21.0823542410115"
+                    Point2="12.9142858797195,21.0823542410115"
+                    Point3="12.9142858797195,25.0823542410115" />
+                  <mssgle:LineSegment
+                    End="12.9142858797195,34.664708482023" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="236.057145460284,189.647060899834">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,57.5058837428633"
+              Start="0,0"
+              End="0,50.0058837428633">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50.0058837428633" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\Data Flow Task">
+    design-time-name="Package\Get organisations">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="195.2,41.6"
-          Id="Package\Data Flow Task\Get denomallising words"
-          TopLeft="196.00000333786,62.4000008751364" />
+          Size="145.6,41.6"
+          Id="Package\Get organisations\Domain count"
+          TopLeft="385.142863701801,563.341179053099" />
+        <NodeLayout
+          Size="131.2,41.6"
+          Id="Package\Get organisations\Merge Join"
+          TopLeft="220.68571773062,742.352943621705" />
+        <NodeLayout
+          Size="121.6,41.6"
+          Id="Package\Get organisations\Multicast"
+          TopLeft="213.714289353818,564.564708482023" />
+        <NodeLayout
+          Size="192,41.6"
+          Id="Package\Get organisations\Remove single domains"
+          TopLeft="378.857149309042,647.764709648872" />
+        <NodeLayout
+          Size="121.6,41.6"
+          Id="Package\Get organisations\De-noise"
+          TopLeft="204.8,235.2" />
+        <NodeLayout
+          Size="163.2,41.6"
+          Id="Package\Get organisations\Get organisations"
+          TopLeft="182.4,78.4" />
+        <NodeLayout
+          Size="168,41.6"
+          Id="Package\Get organisations\Remove duplicates"
+          TopLeft="185.714288876981,402.964709211303" />
+        <NodeLayout
+          Size="180.8,41.6"
+          Id="Package\Get organisations\Remove null domains"
+          TopLeft="176.571431578422,306.729415067917" />
+        <NodeLayout
+          Size="156.8,41.6"
+          Id="Package\Get organisations\Data Conversion"
+          TopLeft="200.00000340598,486.870591787319" />
+        <NodeLayout
+          Size="129.6,41.6"
+          Id="Package\Get organisations\Load table"
+          TopLeft="231.428575369776,817.788239807076" />
+        <NodeLayout
+          Size="108.8,41.6"
+          Id="Package\Get organisations\Sort 1"
+          TopLeft="413.82857816268,722.917650353455" />
+        <NodeLayout
+          Size="185.6,41.6"
+          Id="Package\Get organisations\Add last_word column"
+          TopLeft="177.6,163.2" />
+        <NodeLayout
+          Size="99.2,41.6"
+          Id="Package\Get organisations\Sort"
+          TopLeft="218.97143198714,648.282355189076" />
+        <EdgeLayout
+          Id="Package\Get organisations.Paths[Sort Output1]"
+          TopLeft="413.82857816268,743.717650353455">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-61.9428604320605,19.43529326825"
+              Start="0,0"
+              End="-54.4428604320605,19.43529326825">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-26.9714302160303,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-26.9714302160303,0"
+                    Point2="-30.9714302160303,0"
+                    Point3="-30.9714302160303,4" />
+                  <mssgle:LineSegment
+                    End="-30.9714302160303,15.43529326825" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-30.9714302160303,15.43529326825"
+                    Point2="-30.9714302160303,19.43529326825"
+                    Point3="-34.9714302160303,19.43529326825" />
+                  <mssgle:LineSegment
+                    End="-54.4428604320605,19.43529326825" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Get organisations.Paths[Sort Output]"
+          TopLeft="268.57143198714,689.882355189076">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="17.7142857434798,52.4705884326289"
+              Start="0,0"
+              End="17.7142857434798,44.9705884326289">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.2352942163145" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.2352942163145"
+                    Point2="0,26.2352942163145"
+                    Point3="4,26.2352942163145" />
+                  <mssgle:LineSegment
+                    End="13.7142857434798,26.2352942163145" />
+                  <mssgle:CubicBezierSegment
+                    Point1="13.7142857434798,26.2352942163145"
+                    Point2="17.7142857434798,26.2352942163145"
+                    Point3="17.7142857434798,30.2352942163145" />
+                  <mssgle:LineSegment
+                    End="17.7142857434798,44.9705884326289" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Get organisations.Paths[Output 0]"
+          TopLeft="266.285715789211,276.8">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29.929415067917"
+              Start="0,0"
+              End="0,22.429415067917">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.429415067917" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Get organisations.Paths[Not null]"
+          TopLeft="268.342860227702,348.329415067917">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,54.6352941433863"
+              Start="0,0"
+              End="0,47.1352941433863">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,47.1352941433863" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-17.44212890625,18.6931353529431,34.8842578125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Get organisations.Paths[Non singles]"
+          TopLeft="471.542863735861,689.364709648872">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33.5529407045833"
+              Start="0,0"
+              End="0,26.0529407045833">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.0529407045833" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-25.877578125,7.19492738354165,51.75515625,11.6630859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Get organisations.Paths[Multicast Output 2]"
+          TopLeft="271.542860670479,606.164708482023">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42.1176467070529"
+              Start="0,0"
+              End="0,34.6176467070529">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.6176467070529" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Get organisations.Paths[Multicast Output 1]"
+          TopLeft="335.314289353818,584.752943767561">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="49.8285743479827,0"
+              Start="0,0"
+              End="42.3285743479827,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="42.3285743479827,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Get organisations.Paths[Merge Join Output]"
+          TopLeft="286.28571773062,783.952943621705">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="9.94285763915673,33.8352961853712"
+              Start="0,0"
+              End="9.94285763915673,26.3352961853712">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12.9176480926856" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.9176480926856"
+                    Point2="0,16.9176480926856"
+                    Point3="4,16.9176480926856" />
+                  <mssgle:LineSegment
+                    End="5.94285763915673,16.9176480926856" />
+                  <mssgle:CubicBezierSegment
+                    Point1="5.94285763915673,16.9176480926856"
+                    Point2="9.94285763915673,16.9176480926856"
+                    Point3="9.94285763915673,20.9176480926856" />
+                  <mssgle:LineSegment
+                    End="9.94285763915673,26.3352961853712" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Get organisations.Paths[Derived Column Output]"
+          TopLeft="268,204.8">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30.4"
+              Start="0,0"
+              End="0,22.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Get organisations.Paths[Data Conversion Output]"
+          TopLeft="276.457146379899,528.470591787319">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36.0941166947044"
+              Start="0,0"
+              End="0,28.5941166947044">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5941166947044" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Get organisations.Paths[Aggregate Output 11]"
+          TopLeft="457.942863701801,604.941179053099">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="16.9142856072406,42.8235305957727"
+              Start="0,0"
+              End="16.9142856072406,35.3235305957727">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.4117652978863" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.4117652978863"
+                    Point2="0,21.4117652978863"
+                    Point3="4,21.4117652978863" />
+                  <mssgle:LineSegment
+                    End="12.9142856072406,21.4117652978863" />
+                  <mssgle:CubicBezierSegment
+                    Point1="12.9142856072406,21.4117652978863"
+                    Point2="16.9142856072406,21.4117652978863"
+                    Point3="16.9142856072406,25.4117652978863" />
+                  <mssgle:LineSegment
+                    End="16.9142856072406,35.3235305957727" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Get organisations.Paths[Aggregate Output 1]"
+          TopLeft="269.714288876981,444.564709211303">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="8.68571452899863,42.3058825760152"
+              Start="0,0"
+              End="8.68571452899863,34.8058825760152">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.1529412880076" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.1529412880076"
+                    Point2="0,21.1529412880076"
+                    Point3="4,21.1529412880076" />
+                  <mssgle:LineSegment
+                    End="4.68571452899863,21.1529412880076" />
+                  <mssgle:CubicBezierSegment
+                    Point1="4.68571452899863,21.1529412880076"
+                    Point2="8.68571452899863,21.1529412880076"
+                    Point3="8.68571452899863,25.1529412880076" />
+                  <mssgle:LineSegment
+                    End="8.68571452899863,34.8058825760152" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Get organisations.Paths[ADO NET Source Output]"
+          TopLeft="267.2,120">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43.2"
+              Start="0,0"
+              End="0,35.7">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.7" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Get denomallising words">
+    design-time-name="Package\Get organisations\Get organisations">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Get organisations\Load table">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

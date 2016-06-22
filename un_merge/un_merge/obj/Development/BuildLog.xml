@@ -2,7 +2,7 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>un_merge</Name>
-    <LastWriteTime>2015-07-22T15:12:15.7370605Z</LastWriteTime>
+    <LastWriteTime>2016-06-20T09:32:14.2028953Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
@@ -18,12 +18,22 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>person_matching.dtsx</Name>
-      <LastWriteTime>2015-07-24T09:27:50.0055062Z</LastWriteTime>
+      <LastWriteTime>2016-04-11T15:49:35.4194755Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>organisation_matching.dtsx</Name>
-      <LastWriteTime>2015-07-23T14:51:56.6697466Z</LastWriteTime>
+      <LastWriteTime>2016-05-10T15:53:02.5395057Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>candidate_matching.dtsx</Name>
+      <LastWriteTime>2016-04-22T15:20:37.5986877Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>organisation_company_refs.dtsx</Name>
+      <LastWriteTime>2016-06-22T14:22:24.3259865Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
