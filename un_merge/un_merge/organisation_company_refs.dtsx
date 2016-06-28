@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="organisation_company_refs"
   DTS:PackageType="5"
-  DTS:VersionBuild="145"
-  DTS:VersionGUID="{7D897EFC-B38D-46F8-9B7B-71F5D6F295D8}">
+  DTS:VersionBuild="151"
+  DTS:VersionGUID="{A5078189-E0BD-4E8B-8131-8FA3838216D4}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -535,6 +535,16 @@
           DTS:ConnectionString="Data Source=DEV-SR-MSSQL-17\APPREPORTS;Initial Catalog=prs_cleansing;Integrated Security=True;Application Name=SSIS-organisation_company_refs-{E60C84AD-69C9-4FC7-8845-3796C2DA82D4}DEV-SR-MSSQL-17\APPREPORTS.prs_cleansing;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[target (OLE DB)]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{90B2B389-2AA9-42EB-987E-2DF916B63B8F}"
+      DTS:ObjectName="target (OLE DB)">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=DEV-SR-MSSQL-17\APPREPORTS;Initial Catalog=prs_cleansing;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
   <DTS:Variables>
     <DTS:Variable
@@ -599,6 +609,17 @@
           </SOAP-ENV:Body>
         </SOAP-ENV:Envelope>
       </DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{95C5015E-FAFA-4344-B882-1995D7848A7C}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;SELECT company_name FROM companies_house_companies&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="sql">
+      <DTS:VariableValue
+        DTS:DataType="8">SELECT company_name FROM companies_house_companies</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>

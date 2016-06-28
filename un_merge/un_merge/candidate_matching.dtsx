@@ -7,12 +7,12 @@
   DTS:CreatorName="MPADGLOBAL\davesexton"
   DTS:DTSID="{6519C905-40EE-4530-87BB-E22873E843DF}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="12.0.2430.0"
+  DTS:LastModifiedProductVersion="12.0.4100.1"
   DTS:LocaleID="2057"
   DTS:ObjectName="candidate_matching"
   DTS:PackageType="5"
-  DTS:VersionBuild="231"
-  DTS:VersionGUID="{08337C72-A958-47F6-A081-C43F4C78446D}">
+  DTS:VersionBuild="233"
+  DTS:VersionGUID="{24B357DF-9449-453E-A0C9-837831805C86}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1224,20 +1224,20 @@ namespace SC_9b7d7d2e1e72492c9d2cd6f496d6ca38.Properties {
                       dataType="System.String"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
 <c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="3.0" schemaVersion="1.0">
 	<msb:PropertyGroup>
-		<msb:CodeName>SC_9b7d7d2e1e72492c9d2cd6f496d6ca38</msb:CodeName>
 		<msb:Language>msBuild</msb:Language>
+		<msb:CodeName>SC_9b7d7d2e1e72492c9d2cd6f496d6ca38</msb:CodeName>
 		<msb:DisplayName>SC_9b7d7d2e1e72492c9d2cd6f496d6ca38</msb:DisplayName>
 		<msb:ProjectId>{60626635-C659-49AD-A1BE-DD96795BBC20}</msb:ProjectId>
 	</msb:PropertyGroup>
 	<msb:ItemGroup>
 		<msb:Project Include="SC_9b7d7d2e1e72492c9d2cd6f496d6ca38.csproj"/>
-		<msb:File Include="Properties\AssemblyInfo.cs"/>
 		<msb:File Include="Properties\Settings.settings"/>
+		<msb:File Include="Properties\AssemblyInfo.cs"/>
 		<msb:File Include="Properties\Resources.resx"/>
 		<msb:File Include="Properties\Resources.Designer.cs"/>
-		<msb:File Include="Properties\Settings.Designer.cs"/>
-		<msb:File Include="main.cs"/>
 		<msb:File Include="BufferWrapper.cs"/>
+		<msb:File Include="main.cs"/>
+		<msb:File Include="Properties\Settings.Designer.cs"/>
 		<msb:File Include="ComponentWrapper.cs"/>
 	</msb:ItemGroup>
 </c:Project>]]></arrayElement>
@@ -1374,7 +1374,7 @@ namespace SC_9b7d7d2e1e72492c9d2cd6f496d6ca38.Properties {
                     <arrayElement
                       dataType="System.String"><![CDATA[TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
-ZGUuDQ0KJAAAAAAAAABQRQAATAEDAIkxGlcAAAAAAAAAAOAAAiELAQsAACIAAAAIAAAAAAAA/j8A
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAMLia1cAAAAAAAAAAOAAAiELAQsAACIAAAAIAAAAAAAA/j8A
 AAAgAAAAYAAAAAAAEAAgAAAAAgAABAAAAAAAAAAEAAAAAAAAAACgAAAAAgAAAAAAAAMAQIUAABAA
 ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAKw/AABPAAAAAGAAAKgEAAAAAAAAAAAAAAAAAAAA
 AAAAAIAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -1450,7 +1450,7 @@ TwAAAJwFdQAAABUGegAAADkGiAACAAoAAwABAAsAAwABAA0ABQACAAwABQACAA4ABwACAA8ACQAC
 ABAACwABABEACwABABMADQACABIADQABABUADwACABQADwACABYAEQABABcAEQACABgAEwABABkA
 EwABABsAFQACABoAFQACABwAFwABAB0AFwACAB4AGQABAB8AGQACACAAGwABACEAGwABACMAHQAC
 ACIAHQABACUAHwACACQAHwACACYAIQABACcAIQABACkAIwACACgAIwABACsAJQACACoAJQACACwA
-JwABAC0AJwACAC4AKQABAC8AKQACADUAKwACADYALQABADcALQACADgALwAEgAAAAQAAAEQXBGQA
+JwABAC0AJwACAC4AKQABAC8AKQACADUAKwACADYALQABADcALQACADgALwAEgAAAAQAAAIIXIV4A
 AAAAAAAcCAAADAAAAAAAAAAAAAAAAQCwAAAAAAAEAAAAAAAAAAAAAAAKAAsBAAAAAAQAAAAAAAAA
 AAAAAAoAFAEAAAAADAAAAAAAAAAAAAAAAQBVAQAAAAAAAAAAAQAAADkKAAArALoAAAAAAAA8TW9k
 dWxlPgBTQ181M0JEMDFDMTUwODY0MEE3QjcwNjg2QUUyMkNERTVFRC5kbGwAVXNlckNvbXBvbmVu
@@ -1513,7 +1513,7 @@ AHIAdAB5ACAAYwBhAG4AbgBvAHQAIABiAGUAIABzAGUAdAAgAHQAbwAgAEYAYQBsAHMAZQAuACAA
 QQBzAHMAaQBnAG4AIABhACAAdgBhAGwAdQBlACAAdABvACAAdABoAGUAIABjAG8AbAB1AG0AbgAg
 AGkAbgBzAHQAZQBhAGQALgAAcVMAQwBfADkAYgA3AGQANwBkADIAZQAxAGUANwAyADQAOQAyAGMA
 OQBkADIAYwBkADYAZgA0ADkANgBkADYAYwBhADMAOAAuAFAAcgBvAHAAZQByAHQAaQBlAHMALgBS
-AGUAcwBvAHUAcgBjAGUAcwAAAAuqRBNAZA9LjdhAAQ4iuYEACImEXc2AgMyRCLd6XFYZNOCJAwYS
+AGUAcwBvAHUAcgBjAGUAcwAAAAnUYqIUOxZJmyXyOa32xi4ACImEXc2AgMyRCLd6XFYZNOCJAwYS
 FAMGEhgDIAABCSAEAQgOEhUSGQUgAQESEAkgAwESFR0IEhkDIAAOBCABAQ4DIAACBCABAQIDKAAO
 AygAAgMGEgUFIAEBEgUDBhIdAwYSIQQAABIdBAAAEiEFAAEBEiEECAASHQQIABIhAwYSIAQAABIg
 BAgAEiAEIAEBCAYgAgIOEVkFIAEdCAgEAQAAAAYAAw4ODg4GAAIdDg4OBxABAQEdHgADCgEOBgAC
@@ -1536,14 +1536,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABABAA
 AAAYAACAAAAAAAAAAAAAAAAAAAABAAEAAAAwAACAAAAAAAAAAAAAAAAAAAABAAAAAABIAAAAWGAA
 AEwEAAAAAAAAAAAAAEwENAAAAFYAUwBfAFYARQBSAFMASQBPAE4AXwBJAE4ARgBPAAAAAAC9BO/+
-AAABAAAAAQAEZEQXAAABAARkRBc/AAAAAAAAAAQAAAACAAAAAAAAAAAAAAAAAAAARAAAAAEAVgBh
+AAABAAAAAQAhXoIXAAABACFeghc/AAAAAAAAAAQAAAACAAAAAAAAAAAAAAAAAAAARAAAAAEAVgBh
 AHIARgBpAGwAZQBJAG4AZgBvAAAAAAAkAAQAAABUAHIAYQBuAHMAbABhAHQAaQBvAG4AAAAAAAAA
 sASsAwAAAQBTAHQAcgBpAG4AZwBGAGkAbABlAEkAbgBmAG8AAACIAwAAAQAwADAAMAAwADAANABi
 ADAAAABgAB8AAQBDAG8AbQBwAGEAbgB5AE4AYQBtAGUAAAAAAE0AaQBjAGgAYQBlAGwAIABQAGEA
 ZwBlACAASQBuAHQAZQByAG4AYQB0AGkAbwBuAGEAbAAgAFAATABDAAAAAABwACQAAQBGAGkAbABl
 AEQAZQBzAGMAcgBpAHAAdABpAG8AbgAAAAAAUwBDAF8AOQBiADcAZAA3AGQAMgBlADEAZQA3ADIA
 NAA5ADIAYwA5AGQAMgBjAGQANgBmADQAOQA2AGQANgBjAGEAMwA4AAAAQAAPAAEARgBpAGwAZQBW
-AGUAcgBzAGkAbwBuAAAAAAAxAC4AMAAuADUAOQA1ADYALgAyADUANgAwADQAAAAAAHAAKAABAEkA
+AGUAcgBzAGkAbwBuAAAAAAAxAC4AMAAuADYAMAAxADgALgAyADQAMAA5ADcAAAAAAHAAKAABAEkA
 bgB0AGUAcgBuAGEAbABOAGEAbQBlAAAAUwBDAF8ANQAzAEIARAAwADEAQwAxADUAMAA4ADYANAAw
 AEEANwBCADcAMAA2ADgANgBBAEUAMgAyAEMARABFADUARQBEAC4AZABsAGwAAACEADAAAQBMAGUA
 ZwBhAGwAQwBvAHAAeQByAGkAZwBoAHQAAABDAG8AcAB5AHIAaQBnAGgAdAAgAEAAIABNAGkAYwBo
@@ -1552,9 +1552,9 @@ MAAxADYAAAB4ACgAAQBPAHIAaQBnAGkAbgBhAGwARgBpAGwAZQBuAGEAbQBlAAAAUwBDAF8ANQAz
 AEIARAAwADEAQwAxADUAMAA4ADYANAAwAEEANwBCADcAMAA2ADgANgBBAEUAMgAyAEMARABFADUA
 RQBEAC4AZABsAGwAAABoACQAAQBQAHIAbwBkAHUAYwB0AE4AYQBtAGUAAAAAAFMAQwBfADkAYgA3
 AGQANwBkADIAZQAxAGUANwAyADQAOQAyAGMAOQBkADIAYwBkADYAZgA0ADkANgBkADYAYwBhADMA
-OAAAAEQADwABAFAAcgBvAGQAdQBjAHQAVgBlAHIAcwBpAG8AbgAAADEALgAwAC4ANQA5ADUANgAu
-ADIANQA2ADAANAAAAAAASAAPAAEAQQBzAHMAZQBtAGIAbAB5ACAAVgBlAHIAcwBpAG8AbgAAADEA
-LgAwAC4ANQA5ADUANgAuADIANQA2ADAANAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+OAAAAEQADwABAFAAcgBvAGQAdQBjAHQAVgBlAHIAcwBpAG8AbgAAADEALgAwAC4ANgAwADEAOAAu
+ADIANAAwADkANwAAAAAASAAPAAEAQQBzAHMAZQBtAGIAbAB5ACAAVgBlAHIAcwBpAG8AbgAAADEA
+LgAwAC4ANgAwADEAOAAuADIANAAwADkANwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -4159,56 +4159,12 @@ ORDER BY score DESC</property>
           TopLeft="275.428576119092,45.1176476915815" />
         <NodeLayout
           Size="156.8,41.6"
-          Id="Package\Load temp table"
-          TopLeft="275.428576119092,127.552942965352" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 7]"
-          TopLeft="353.828576119092,86.7176476915815">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,40.8352952737709"
-              Start="0,0"
-              End="0,33.3352952737709">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,33.3352952737709" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="156.8,41.6"
           Id="Package\Fix genders"
           TopLeft="275.428576119092,209.988238239123" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 8]"
-          TopLeft="353.828576119092,169.152942965352">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,40.8352952737709"
-              Start="0,0"
-              End="0,33.3352952737709">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,33.3352952737709" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="156.8,41.6"
+          Id="Package\Load temp table"
+          TopLeft="275.428576119092,127.552942965352" />
         <NodeLayout
           Size="156.8,41.6"
           Id="Package\Output results"
@@ -4235,6 +4191,50 @@ ORDER BY score DESC</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 7]"
+          TopLeft="353.828576119092,86.7176476915815">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40.8352952737709"
+              Start="0,0"
+              End="0,33.3352952737709">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.3352952737709" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 8]"
+          TopLeft="353.828576119092,169.152942965352">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40.8352952737709"
+              Start="0,0"
+              End="0,33.3352952737709">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.3352952737709" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -4245,188 +4245,62 @@ ORDER BY score DESC</property>
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="164.8,41.6"
-          Id="Package\Load temp table\Get candidates"
-          TopLeft="59.2,60" />
-        <NodeLayout
-          Size="164.8,41.6"
-          Id="Package\Load temp table\De-noise text"
-          TopLeft="59.2,142.514285714286" />
-        <EdgeLayout
-          Id="Package\Load temp table.Paths[ADO NET Source Output]"
-          TopLeft="141.6,101.6">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,40.9142857142857"
-              Start="0,0"
-              End="0,33.4142857142857">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,33.4142857142857" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="164.8,41.6"
-          Id="Package\Load temp table\Conditional Split"
-          TopLeft="59.2,225.028571428571" />
-        <EdgeLayout
-          Id="Package\Load temp table.Paths[Output 0]"
-          TopLeft="141.6,184.114285714286">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,40.9142857142857"
-              Start="0,0"
-              End="0,33.4142857142857">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,33.4142857142857" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="164.8,41.6"
-          Id="Package\Load temp table\Load temp table"
-          TopLeft="59.2,637.6" />
-        <NodeLayout
-          Size="164.8,41.6"
           Id="Package\Load temp table\Multicast"
-          TopLeft="59.2,307.542857142857" />
-        <EdgeLayout
-          Id="Package\Load temp table.Paths[Has email]"
-          TopLeft="141.6,266.628571428571">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,40.9142857142857"
-              Start="0,0"
-              End="0,33.4142857142857">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,33.4142857142857" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-21.82712890625,11.8326311383929,43.6542578125,9.7490234375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="169.6,41.6"
-          Id="Package\Load temp table\Aggregate"
-          TopLeft="270.4,307.542857142857" />
-        <EdgeLayout
-          Id="Package\Load temp table.Paths[Multicast Output 1]"
-          TopLeft="224,328.342857142857">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="46.4000000000001,0"
-              Start="0,0"
-              End="38.9000000000001,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="38.9000000000001,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="164.8,41.6"
-          Id="Package\Load temp table\Sort"
-          TopLeft="59.2,390.057142857143" />
-        <EdgeLayout
-          Id="Package\Load temp table.Paths[Multicast Output 2]"
-          TopLeft="141.6,349.142857142857">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,40.9142857142857"
-              Start="0,0"
-              End="0,33.4142857142857">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,33.4142857142857" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="169.6,41.6"
-          Id="Package\Load temp table\Sort 1"
-          TopLeft="270.4,390.057142857143" />
-        <EdgeLayout
-          Id="Package\Load temp table.Paths[Aggregate Output 1]"
-          TopLeft="355.2,349.142857142857">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,40.9142857142857"
-              Start="0,0"
-              End="0,33.4142857142857">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,33.4142857142857" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="57.5673469109716,261.847778470788" />
         <NodeLayout
           Size="169.6,41.6"
           Id="Package\Load temp table\Remove singletons"
-          TopLeft="270.4,472.571428571429" />
+          TopLeft="270.4,396.412964117981" />
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\Load temp table\Null blanks"
+          TopLeft="57.5673469109716,463.695556941577" />
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\Load temp table\Conditional Split"
+          TopLeft="57.5673469109716,194.565185647192" />
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\Load temp table\Sort"
+          TopLeft="57.5673469109716,329.130371294384" />
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\Load temp table\Get candidates"
+          TopLeft="57.5673469109716,60" />
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\Load temp table\Merge Join"
+          TopLeft="57.5673469109716,396.412964117981" />
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\Load temp table\Load temp table"
+          TopLeft="57.5673469109716,530.978149765173" />
+        <NodeLayout
+          Size="169.6,41.6"
+          Id="Package\Load temp table\Aggregate"
+          TopLeft="270.4,261.847778470788" />
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\Load temp table\De-noise text"
+          TopLeft="57.5673469109716,127.282592823596" />
+        <NodeLayout
+          Size="169.6,41.6"
+          Id="Package\Load temp table\Sort 1"
+          TopLeft="270.4,329.130371294384" />
         <EdgeLayout
-          Id="Package\Load temp table.Paths[Sort Output]"
-          TopLeft="355.2,431.657142857143">
+          Id="Package\Load temp table.Paths[ADO NET Source Output]"
+          TopLeft="139.967346910972,101.6">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,40.9142857142857"
+              EndConnector="0,25.6825928235961"
               Start="0,0"
-              End="0,33.4142857142857">
+              End="0,18.1825928235961">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,33.4142857142857" />
+                    End="0,18.1825928235961" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4435,24 +4309,130 @@ ORDER BY score DESC</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="164.8,41.6"
-          Id="Package\Load temp table\Merge Join"
-          TopLeft="59.2,472.571428571429" />
         <EdgeLayout
           Id="Package\Load temp table.Paths[Sort Output1]"
-          TopLeft="141.6,431.657142857143">
+          TopLeft="139.967346910972,370.730371294384">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,40.9142857142857"
+              EndConnector="0,25.6825928235961"
               Start="0,0"
-              End="0,33.4142857142857">
+              End="0,18.1825928235961">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,33.4142857142857" />
+                    End="0,18.1825928235961" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load temp table.Paths[Sort Output]"
+          TopLeft="355.2,370.730371294384">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,25.6825928235961"
+              Start="0,0"
+              End="0,18.1825928235961">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.1825928235961" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load temp table.Paths[Output 0]"
+          TopLeft="139.967346910972,168.882592823596">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,25.6825928235961"
+              Start="0,0"
+              End="0,18.1825928235961">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.1825928235961" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load temp table.Paths[Multicast Output 2]"
+          TopLeft="139.967346910972,303.447778470788">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,25.6825928235961"
+              Start="0,0"
+              End="0,18.1825928235961">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.1825928235961" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load temp table.Paths[Multicast Output 1]"
+          TopLeft="222.367346910972,282.647778470788">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="48.0326530890284,0"
+              Start="0,0"
+              End="40.5326530890284,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="40.5326530890284,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load temp table.Paths[Merge Join Output]"
+          TopLeft="139.967346910972,438.012964117981">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,25.6825928235961"
+              Start="0,0"
+              End="0,18.1825928235961">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.1825928235961" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4463,46 +4443,66 @@ ORDER BY score DESC</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load temp table.Paths[Is match candidate]"
-          TopLeft="270.4,493.371428571429">
+          TopLeft="270.4,417.212964117981">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-46.4000000000001,0"
+              EndConnector="-48.0326530890284,0"
               Start="0,0"
-              End="-38.9000000000001,0">
+              End="-40.5326530890284,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-38.9000000000001,0" />
+                    End="-40.5326530890284,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-62.22794921875,5,85.5558984375,9.7490234375"
+              BoundingBox="-63.0442757632642,5,85.5558984375,9.7490234375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="164.8,41.6"
-          Id="Package\Load temp table\Null blanks"
-          TopLeft="59.2,555.085714285714" />
         <EdgeLayout
-          Id="Package\Load temp table.Paths[Merge Join Output]"
-          TopLeft="141.6,514.171428571429">
+          Id="Package\Load temp table.Paths[Has email]"
+          TopLeft="139.967346910972,236.165185647192">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,40.9142857142857"
+              EndConnector="0,25.6825928235961"
               Start="0,0"
-              End="0,33.4142857142857">
+              End="0,18.1825928235961">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,33.4142857142857" />
+                    End="0,18.1825928235961" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-21.82712890625,4.21678469304804,43.6542578125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load temp table.Paths[Derived Column Output]"
+          TopLeft="139.967346910972,505.295556941577">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,25.6825928235961"
+              Start="0,0"
+              End="0,18.1825928235961">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.1825928235961" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4512,19 +4512,19 @@ ORDER BY score DESC</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load temp table.Paths[Derived Column Output]"
-          TopLeft="141.6,596.685714285714">
+          Id="Package\Load temp table.Paths[Aggregate Output 1]"
+          TopLeft="355.2,303.447778470788">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,40.9142857142857"
+              EndConnector="0,25.6825928235961"
               Start="0,0"
-              End="0,33.4142857142857">
+              End="0,18.1825928235961">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,33.4142857142857" />
+                    End="0,18.1825928235961" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4558,13 +4558,13 @@ ORDER BY score DESC</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="147.2,41.6"
-          Id="Package\Output results\Get duplicates"
-          TopLeft="132,164" />
-        <NodeLayout
           Size="123.2,41.6"
           Id="Package\Output results\Write file"
           TopLeft="141.6,259.2" />
+        <NodeLayout
+          Size="147.2,41.6"
+          Id="Package\Output results\Get duplicates"
+          TopLeft="132,164" />
         <EdgeLayout
           Id="Package\Output results.Paths[ADO NET Source Output]"
           TopLeft="204.4,205.6">
